@@ -1,18 +1,17 @@
 <head>
   <meta name="layout" content="main"/>
-  <title>Edit AcegiUser</title>
+  <title>Create User</title>
 </head>
 
 <body>
 
 <div class="nav">
   <span class="menuButton"><a class="home" href="${createLinkTo(dir: '')}">Home</a></span>
-  <span class="menuButton"><g:link class="list" action="list">AcegiUser List</g:link></span>
-  <span class="menuButton"><g:link class="create" action="create">New AcegiUser</g:link></span>
+  <span class="menuButton"><g:link class="list" action="list">User List</g:link></span>
 </div>
 
 <div class="body">
-  <h1>Edit AcegiUser</h1>
+  <h1>Create User</h1>
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
@@ -21,37 +20,22 @@
       <g:renderErrors bean="${person}" as="list"/>
     </div>
   </g:hasErrors>
-
-  <div class="prop">
-    <span class="name">ID:</span>
-    <span class="value">${person.id}</span>
-  </div>
-
-  <g:form>
-    <input type="hidden" name="id" value="${person.id}"/>
-    <input type="hidden" name="version" value="${person.version}"/>
+  <g:form action="save">
     <div class="dialog">
       <table>
         <tbody>
 
         <tr class="prop">
-          <td valign="top" class="name"><label for="username">Login Name:</label></td>
+          <td valign="top" class="name"><label for="username">Username:</label></td>
           <td valign="top" class="value ${hasErrors(bean: person, field: 'username', 'errors')}">
             <input type="text" id="username" name="username" value="${person.username?.encodeAsHTML()}"/>
           </td>
         </tr>
 
-        <tr class='prop'>
-          <td valign='top' class='name'><label for='passwd'>Password:</label></td>
-          <td valign='top' class='value ${hasErrors(bean: person, field: 'passwd', 'errors')}'>
-            <input type="password" name='passwd' value=""/>
-          </td>
-        </tr>
-
-        <tr class='prop'>
-          <td valign='top' class='name'><label for='repasswd'>Confirm Password:</label></td>
-          <td valign='top' class='value ${hasErrors(bean: person, field: 'passwd', 'errors')}'>
-            <input type="password" name='repasswd'/>
+        <tr class="prop">
+          <td valign="top" class="name"><label for="passwd">Password:</label></td>
+          <td valign="top" class="value ${hasErrors(bean: person, field: 'passwd', 'errors')}">
+            <input type="password" id="passwd" name="passwd" value="${person.passwd?.encodeAsHTML()}"/>
           </td>
         </tr>
 
@@ -138,42 +122,10 @@
 
         <tr class="prop">
           <td valign="top" class="name">
-            <label for="whyIWantToJoin">Why IW ant To Join:</label>
+            <label for="whyIWantToJoin">Why I Want To Join:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: person, field: 'whyIWantToJoin', 'errors')}">
             <textarea rows="5" cols="40" name="whyIWantToJoin">${fieldValue(bean: person, field: 'whyIWantToJoin')}</textarea>
-          </td>
-        </tr>
-
-        <tr class="prop">
-          <td valign="top" class="name">
-            <label for="eventsAttending">Events Attending:</label>
-          </td>
-          <td valign="top" class="value ${hasErrors(bean: person, field: 'eventsAttending', 'errors')}">
-
-            <ul>
-              <g:each var="e" in="${person?.eventsAttending?}">
-                <li><g:link controller="eventAttendeeRegistration" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
-              </g:each>
-            </ul>
-            <g:link controller="eventAttendeeRegistration" params="['user.id':person?.id]" action="create">Add EventAttendeeRegistration</g:link>
-
-          </td>
-        </tr>
-
-        <tr class="prop">
-          <td valign="top" class="name">
-            <label for="eventsSpeaking">Events Speaking:</label>
-          </td>
-          <td valign="top" class="value ${hasErrors(bean: person, field: 'eventsSpeaking', 'errors')}">
-
-            <ul>
-              <g:each var="e" in="${person?.eventsSpeaking?}">
-                <li><g:link controller="eventSpeakerAssignment" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
-              </g:each>
-            </ul>
-            <g:link controller="eventSpeakerAssignment" params="['user.id':person?.id]" action="create">Add EventSpeakerAssignment</g:link>
-
           </td>
         </tr>
 
@@ -187,25 +139,22 @@
         </tr>
 
         <tr class="prop">
-          <td valign="top" class="name"><label for="authorities">Roles:</label></td>
-          <td valign="top" class="value ${hasErrors(bean: person, field: 'authorities', 'errors')}">
-            <ul>
-              <g:each var="entry" in="${roleMap}">
-                <li>${entry.key.authority.encodeAsHTML()}
-                <g:checkBox name="${entry.key.authority}" value="${entry.value}"/>
-                </li>
-              </g:each>
-            </ul>
-          </td>
+          <td valign="top" class="name" align="left">Assign Roles:</td>
         </tr>
+
+        <g:each in="${authorityList}">
+          <tr>
+            <td valign="top" class="name" align="left">${it.authority.encodeAsHTML()}</td>
+            <td align="left"><g:checkBox name="${it.authority}"/></td>
+          </tr>
+        </g:each>
 
         </tbody>
       </table>
     </div>
 
     <div class="buttons">
-      <span class="button"><g:actionSubmit class="save" value="Update"/></span>
-      <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete"/></span>
+      <span class="button"><input class="save" type="submit" value="Create"/></span>
     </div>
 
   </g:form>

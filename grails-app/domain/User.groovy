@@ -1,7 +1,7 @@
 /**
  * User domain class.
  */
-class AcegiUser {
+class User {
   static transients = ['pass']
   static hasMany = [authorities: Role, eventsAttending:EventAttendeeRegistration, eventsSpeaking:EventSpeakerAssignment]
   static belongsTo = Role

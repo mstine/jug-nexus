@@ -1,7 +1,7 @@
 class EventSpeakerAssignment {
 
   Event event
-  AcegiUser user
+  User user
   String topic
   String topicAbstract
   boolean lightningTalk = false

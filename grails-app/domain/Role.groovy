@@ -7,7 +7,7 @@
  */
 class Role {
 
-	static hasMany = [people: AcegiUser]
+	static hasMany = [people: User]
 
 	/** description */
 	String description

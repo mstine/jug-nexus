@@ -1,7 +1,7 @@
 class EventAttendeeRegistration {
 
     Event event
-    AcegiUser user
+    User user
     boolean raffleWinner = false
 
     static constraints = {

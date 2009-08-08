@@ -92,7 +92,7 @@ Released   : 20081016
                   <li><g:link controller="register">Register</g:link></li>
                 </g:isNotLoggedIn>
                 <li><g:link controller="event">Events</g:link></li>
-                <li><g:link controller="acegiUser">Users</g:link></li>
+                <li><g:link controller="user">Users</g:link></li>
                 <li><g:link controller="role">Roles</g:link></li>
                 <li><g:link controller="eventAttendeeRegistration">Registrations</g:link></li>
                 <li><g:link controller="eventSpeakerAssignment">Speaker Assignments</g:link></li>

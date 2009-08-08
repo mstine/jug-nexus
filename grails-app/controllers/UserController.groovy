@@ -1,7 +1,7 @@
 /**
  * User controller.
  */
-class AcegiUserController {
+class UserController {
 
   def authenticateService
 
@@ -16,13 +16,13 @@ class AcegiUserController {
     if (!params.max) {
       params.max = 10
     }
-    [personList: AcegiUser.list(params)]
+    [personList: User.list(params)]
   }
 
   def show = {
-    def person = AcegiUser.get(params.id)
+    def person = User.get(params.id)
     if (!person) {
-      flash.message = "AcegiUser not found with id $params.id"
+      flash.message = "User not found with id $params.id"
       redirect action: list
       return
     }
@@ -42,7 +42,7 @@ class AcegiUserController {
    */
   def delete = {
 
-    def person = AcegiUser.get(params.id)
+    def person = User.get(params.id)
     if (person) {
       def authPrincipal = authenticateService.principal()
       //avoid self-delete if the logged-in user is an admin
@@ -53,11 +53,11 @@ class AcegiUserController {
         //first, delete this person from People_Authorities table.
         Role.findAll().each { it.removeFromPeople(person) }
         person.delete()
-        flash.message = "AcegiUser $params.id deleted."
+        flash.message = "User $params.id deleted."
       }
     }
     else {
-      flash.message = "AcegiUser not found with id $params.id"
+      flash.message = "User not found with id $params.id"
     }
 
     redirect action: list
@@ -65,9 +65,9 @@ class AcegiUserController {
 
   def edit = {
 
-    def person = AcegiUser.get(params.id)
+    def person = User.get(params.id)
     if (!person) {
-      flash.message = "AcegiUser not found with id $params.id"
+      flash.message = "User not found with id $params.id"
       redirect action: list
       return
     }
@@ -80,9 +80,9 @@ class AcegiUserController {
    */
   def update = {
 
-    def person = AcegiUser.get(params.id)
+    def person = User.get(params.id)
     if (!person) {
-      flash.message = "AcegiUser not found with id $params.id"
+      flash.message = "User not found with id $params.id"
       redirect action: edit, id: params.id
       return
     }
@@ -90,7 +90,7 @@ class AcegiUserController {
     long version = params.version.toLong()
     if (person.version > version) {
       person.errors.rejectValue 'version', "person.optimistic.locking.failure",
-              "Another user has updated this AcegiUser while you were editing."
+              "Another user has updated this User while you were editing."
       render view: 'edit', model: buildPersonModel(person)
       return
     }
@@ -124,7 +124,7 @@ class AcegiUserController {
   }
 
   def create = {
-    [person: new AcegiUser(params), authorityList: Role.list()]
+    [person: new User(params), authorityList: Role.list()]
   }
 
   /**
@@ -132,7 +132,7 @@ class AcegiUserController {
    */
   def save = {
 
-    def person = new AcegiUser()
+    def person = new User()
     person.properties = params
     person.passwd = authenticateService.encodePassword(params.passwd)
     if (person.save()) {

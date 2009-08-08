@@ -22,11 +22,11 @@
   <div class="entry">
     <p>
     <ul class="speakerTopics">
-      <li><strong>Speaker:</strong> <g:link controller="acegiUser" action="show" id="${eventSpeakerAssignmentInstance?.user?.id}">${eventSpeakerAssignmentInstance?.user?.encodeAsHTML()}</g:link></li>
+      <li><strong>Speaker:</strong> <g:link controller="user" action="show" id="${eventSpeakerAssignmentInstance?.user?.id}">${eventSpeakerAssignmentInstance?.user?.encodeAsHTML()}</g:link></li>
       <li><strong>Event:</strong> <g:link controller="event" action="show" id="${eventSpeakerAssignmentInstance?.event?.id}">${eventSpeakerAssignmentInstance?.event?.encodeAsHTML()}</g:link></li>
     </ul>
     </p>
-    <p>${fieldValue(bean: eventSpeakerAssignmentInstance, field: 'topicAbstract')}</p>
+    <div class="topicAbstract"><g:xwikiRender>${fieldValue(bean: eventSpeakerAssignmentInstance, field: 'topicAbstract')}</g:xwikiRender></div>
 
   </div>
   <g:ifAllGranted role="ROLE_ADMIN">

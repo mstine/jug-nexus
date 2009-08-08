@@ -1,13 +1,13 @@
 <head>
   <meta name="layout" content="main"/>
-  <title>AcegiUser List</title>
+  <title>User List</title>
 </head>
 
 <body>
 
 <div class="nav">
   <span class="menuButton"><a class="home" href="${createLinkTo(dir: '')}">Home</a></span>
-  <span class="menuButton"><g:link class="create" action="create">New AcegiUser</g:link></span>
+  <span class="menuButton"><g:link class="create" action="create">New User</g:link></span>
 </div>
 
 <div class="post">
@@ -44,7 +44,7 @@
   </div>
 
   <div class="paginateButtons">
-    <g:paginate total="${AcegiUser.count()}"/>
+    <g:paginate total="${User.count()}"/>
   </div>
 
 </div>

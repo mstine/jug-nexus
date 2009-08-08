@@ -39,7 +39,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">User:</td>
                             
-                            <td valign="top" class="value"><g:link controller="acegiUser" action="show" id="${eventAttendeeRegistrationInstance?.user?.id}">${eventAttendeeRegistrationInstance?.user?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="user" action="show" id="${eventAttendeeRegistrationInstance?.user?.id}">${eventAttendeeRegistrationInstance?.user?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

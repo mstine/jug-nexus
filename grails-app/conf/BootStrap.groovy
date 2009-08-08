@@ -8,15 +8,15 @@ class BootStrap {
        new Role(authority:"ROLE_ADMIN", description: "Administrator role.").save()
        new Role(authority:"ROLE_SPEAKER", description: "Event speaker role.").save()
 
-       new AcegiUser(username: "mstine", passwd: authenticateService.encodePassword("password"),
+       new User(username: "mstine", passwd: authenticateService.encodePassword("password"),
                 firstName: "Matt", lastName: "Stine",
                 email: "matt.stine@gmail.com", whyIWantToJoin: "I started the JUG!", moderated: true).addToAuthorities(memberRole).save()
 
-       new AcegiUser(username: "jneely", passwd: authenticateService.encodePassword("password"),
+       new User(username: "jneely", passwd: authenticateService.encodePassword("password"),
                 firstName: "Joel", lastName: "Neely",
                 email: "joel.neely@gmail.com", whyIWantToJoin: "I've been coding since the 60's!", moderated: true).addToAuthorities(memberRole).save()
 
-       new AcegiUser(username: "mmayo", passwd: authenticateService.encodePassword("password"),
+       new User(username: "mmayo", passwd: authenticateService.encodePassword("password"),
                 firstName: "Michael", lastName: "Mayo",
                 email: "michael.mayo@gmail.com", whyIWantToJoin: "I write Android apps!", moderated: true).addToAuthorities(memberRole).save()
 
@@ -30,25 +30,25 @@ class BootStrap {
                  location: "X Building", directions: "See Google Maps!").save()
 
        new EventSpeakerAssignment(event: Event.findByTitle("Pragmatic JMS"),
-                                  user: AcegiUser.findByUsername("mstine"),
+                                  user: User.findByUsername("mstine"),
                                   topic: "Pragmatic JMS", topicAbstract: "Test").save()
 
        new EventSpeakerAssignment(event: Event.findByTitle("Why Scala will Rule the World!"),
-                                  user: AcegiUser.findByUsername("jneely"),
+                                  user: User.findByUsername("jneely"),
                                   topic: "Why Scala will Rule the World!", topicAbstract: "Test").save()
 
        new EventSpeakerAssignment(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: AcegiUser.findByUsername("mmayo"),
+                                  user: User.findByUsername("mmayo"),
                                   topic: "Bay Area Ruby Lovers", topicAbstract: "Test").save()
 
        new EventAttendeeRegistration(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: AcegiUser.findByUsername("mmayo")).save()
+                                  user: User.findByUsername("mmayo")).save()
 
        new EventAttendeeRegistration(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: AcegiUser.findByUsername("jneely")).save()
+                                  user: User.findByUsername("jneely")).save()
 
        new EventAttendeeRegistration(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: AcegiUser.findByUsername("mstine")).save()
+                                  user: User.findByUsername("mstine")).save()
 
 
 

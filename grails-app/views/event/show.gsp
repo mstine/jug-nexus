@@ -38,7 +38,7 @@
       <ul class="speakerList">
         <g:each var="speaker" in="${eventInstance.speakers}">
           <li>
-            <h2><g:link controller="acegiUser" action="show" id="${speaker.user.id}">${speaker.user.firstName} ${speaker.user.lastName}</g:link> <g:if test="${speaker.user.twitterNickname}"><a href="http://twitter.com/${speaker.user.twitterNickname}"><img class="twitterIcon" src="${resource(dir:'images', file:'twitter.png')}" alt="Follow me on Twitter!" title="Follow me on Twitter!"/></a></g:if></h2>
+            <h2><g:link controller="user" action="show" id="${speaker.user.id}">${speaker.user.firstName} ${speaker.user.lastName}</g:link> <g:if test="${speaker.user.twitterNickname}"><a href="http://twitter.com/${speaker.user.twitterNickname}"><img class="twitterIcon" src="${resource(dir:'images', file:'twitter.png')}" alt="Follow me on Twitter!" title="Follow me on Twitter!"/></a></g:if></h2>
             <p><avatar:gravatar email="${speaker.user.email}" cssClass="speakerAvatar"/>${speaker.user.bio}</p>                                                                                                      
             <h2><g:link controller="eventSpeakerAssignment" action="show" id="${speaker.id}">Topic: ${speaker.topic}</g:link> <g:if test="${speaker.lightningTalk}"><img class="lightningTalk" src="${resource(dir:'images', file:'lightning_48.png')}" alt="Lightning Talk" title="Lightning Talk"></g:if></h2>
             <div class="topicAbstract"><g:xwikiRender>${speaker.topicAbstract}</g:xwikiRender></div>

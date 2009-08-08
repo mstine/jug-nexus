@@ -40,7 +40,7 @@
                                     <label for="user">User:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:eventSpeakerAssignmentInstance,field:'user','errors')}">
-                                    <g:select optionKey="id" from="${AcegiUser.list()}" name="user.id" value="${eventSpeakerAssignmentInstance?.user?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${User.list()}" name="user.id" value="${eventSpeakerAssignmentInstance?.user?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

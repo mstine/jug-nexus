@@ -1,14 +1,14 @@
 <head>
   <meta name="layout" content="main"/>
-  <title>Show AcegiUser</title>
+  <title>Show User</title>
 </head>
 
 <body>
 <g:ifAllGranted role="ROLE_ADMIN">
   <div class="nav">
     <span class="menuButton"><a class="home" href="${createLinkTo(dir: '')}">Home</a></span>
-    <span class="menuButton"><g:link class="list" action="list">AcegiUser List</g:link></span>
-    <span class="menuButton"><g:link class="create" action="create">New AcegiUser</g:link></span>
+    <span class="menuButton"><g:link class="list" action="list">User List</g:link></span>
+    <span class="menuButton"><g:link class="create" action="create">New User</g:link></span>
   </div>
 </g:ifAllGranted>
 <g:if test="${flash.message}">

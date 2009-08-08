@@ -27,7 +27,7 @@ class RegisterController {
 		}
 
 		if (session.id) {
-			def person = new AcegiUser()
+			def person = new User()
 			person.properties = params
 			return [person: person]
 		}
@@ -43,7 +43,7 @@ class RegisterController {
 		// get user id from session's domain class.
 		def user = authenticateService.userDomain()
 		if (user) {
-			render view: 'show', model: [person: AcegiUser.get(user.id)]
+			render view: 'show', model: [person: User.get(user.id)]
 		}
 		else {
 			redirect action: index
@@ -58,7 +58,7 @@ class RegisterController {
 		def person
 		def user = authenticateService.userDomain()
 		if (user) {
-			person = AcegiUser.get(user.id)
+			person = User.get(user.id)
 		}
 
 		if (!person) {
@@ -78,7 +78,7 @@ class RegisterController {
 		def person
 		def user = authenticateService.userDomain()
 		if (user) {
-			person = AcegiUser.get(user.id)
+			person = User.get(user.id)
 		}
 		else {
 			redirect action: index
@@ -134,7 +134,7 @@ class RegisterController {
 			return
 		}
 
-		def person = new AcegiUser()
+		def person = new User()
 		person.properties = params
 
 		def config = authenticateService.securityConfig
