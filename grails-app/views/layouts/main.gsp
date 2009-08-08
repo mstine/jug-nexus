@@ -28,10 +28,10 @@ Released   : 20081016
     <h1><a href="/jugNexus">Memphis/Mid-South JUG</a></h1>
     <g:isLoggedIn>
       <avatar:gravatar email="${loggedInUserInfo(field:'email')}"/>
-      <h2>Welcome, <g:link controller="register"><g:loggedInUserInfo field="firstName"/></g:link>!</h2>
+      <h2>Welcome, <g:link controller="register"><g:loggedInUserInfo field="firstName"/></g:link>!<br/><span class="smallLink"><g:link controller="logout">Logout</g:link></span></h2>
     </g:isLoggedIn>
     <g:isNotLoggedIn>
-      <h2>Welcome!</h2>
+      <h2>Welcome!<br/><span class="smallLink"><g:link controller="login">Login</g:link> / <g:link controller="register">Register</g:link></span></h2>
     </g:isNotLoggedIn>
 
   </div>
@@ -78,26 +78,20 @@ Released   : 20081016
           <ul>
             <li>
               <h2>Meet Juggy Elvis</h2>
-              <img src="${resource(dir:'images', file:'juggyElvis-medium.jpg')}"/>
+              <img src="${resource(dir: 'images', file: 'juggyElvis-medium.jpg')}"/>
             </li>
-            <li>
-              <h2>Navigation</h2>
-              <ul>
-                <g:isLoggedIn>
-                  <li><g:link controller="logout">Logout</g:link></li>
-                  <li><g:link controller="register">My Profile</g:link></li>
-                </g:isLoggedIn>
-                <g:isNotLoggedIn>
-                  <li><g:link controller="login">Login</g:link></li>
-                  <li><g:link controller="register">Register</g:link></li>
-                </g:isNotLoggedIn>
-                <li><g:link controller="event">Events</g:link></li>
-                <li><g:link controller="user">Users</g:link></li>
-                <li><g:link controller="role">Roles</g:link></li>
-                <li><g:link controller="eventAttendeeRegistration">Registrations</g:link></li>
-                <li><g:link controller="eventSpeakerAssignment">Speaker Assignments</g:link></li>
-              </ul>
-            </li>
+            <g:ifAllGranted role="ROLE_ADMIN">
+              <li>
+                <h2>Admin Navigation</h2>
+                <ul>
+                  <li><g:link controller="event">Events</g:link></li>
+                  <li><g:link controller="user">Users</g:link></li>
+                  <li><g:link controller="role">Roles</g:link></li>
+                  <li><g:link controller="eventAttendeeRegistration">Registrations</g:link></li>
+                  <li><g:link controller="eventSpeakerAssignment">Speaker Assignments</g:link></li>
+                </ul>
+              </li>
+            </g:ifAllGranted>
             <li>
               <h2>Ipsum sed interdum</h2>
               <ul>
@@ -112,7 +106,7 @@ Released   : 20081016
             </li>
             <li>
               <h2>Powered By</h2>
-              <img src="${resource(dir:'images', file:'grails_logo.png')}"/>
+              <img src="${resource(dir: 'images', file: 'grails_logo.png')}"/>
             </li>
           </ul>
         </div>
