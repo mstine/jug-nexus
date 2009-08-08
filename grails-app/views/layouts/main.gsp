@@ -28,7 +28,7 @@ Released   : 20081016
     <h1><a href="/jugNexus">Memphis/Mid-South JUG</a></h1>
     <g:isLoggedIn>
       <avatar:gravatar email="${loggedInUserInfo(field:'email')}"/>
-      <h2>Welcome, <g:loggedInUserInfo field="firstName"/>!</h2>
+      <h2>Welcome, <g:link controller="register"><g:loggedInUserInfo field="firstName"/></g:link>!</h2>
     </g:isLoggedIn>
     <g:isNotLoggedIn>
       <h2>Welcome!</h2>
