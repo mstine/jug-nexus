@@ -5,12 +5,20 @@ class BootStrap {
      def init = { servletContext ->
 
        def memberRole = new Role(authority:"ROLE_MEMBER", description: "Default role for registered users.").save()
-       new Role(authority:"ROLE_ADMIN", description: "Administrator role.").save()
-       new Role(authority:"ROLE_SPEAKER", description: "Event speaker role.").save()
+       def adminRole = new Role(authority:"ROLE_ADMIN", description: "Administrator role.").save()
+       def speakerRole = new Role(authority:"ROLE_SPEAKER", description: "Event speaker role.").save()
 
        new User(username: "mstine", passwd: authenticateService.encodePassword("password"),
                 firstName: "Matt", lastName: "Stine",
-                email: "matt.stine@gmail.com", whyIWantToJoin: "I started the JUG!", moderated: true).addToAuthorities(memberRole).save()
+                email: "matt.stine@gmail.com", whyIWantToJoin: "I started the JUG!", moderated: true, bio: """Lorem ipsum dolor sit amet, consectetur adipiscing
+elit. Phasellus tincidunt dolor porta nisl bibendum auctor. Ut ac turpis ut eros rutrum iaculis. Ut id ante ipsum. Ut ut est sit amet arcu ultricies ultricies
+vitae eu dolor. Cras id lectus eu massa volutpat lacinia ut nec tellus. Nam dapibus massa sit amet tellus vulputate quis varius mauris porta. Etiam laoreet nisi
+ut nisl commodo pharetra. Mauris mi purus, volutpat a faucibus nec, viverra sit amet nibh. Praesent mattis eleifend sapien, sed mattis dolor lacinia non. Donec
+fermentum dapibus elit, nec dictum odio vestibulum eu. Cras enim metus, facilisis eget blandit a, viverra vel leo. Duis hendrerit massa quis magna semper quis
+faucibus velit ultricies. Cras pretium urna quis velit egestas sed vulputate mauris vulputate. Duis nec erat nec tortor tempor placerat sed id tellus.""")
+               .addToAuthorities(memberRole)
+               .addToAuthorities(adminRole)
+               .addToAuthorities(speakerRole).save()
 
        new User(username: "jneely", passwd: authenticateService.encodePassword("password"),
                 firstName: "Joel", lastName: "Neely",
