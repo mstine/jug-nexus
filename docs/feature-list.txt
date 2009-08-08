@@ -1,0 +1,48 @@
+JUG Nexus Features
+
+X Create events, with date/time, location, speaker information, event abstracts
+- Embed Google Map to event
+X Events should be able to have multiple speakers and abstracts (lightning round, code camp?)
+X Should be able to set a max registration for an event, whether registration is open or closed, etc.
+X Users should be able to register for accounts
+X User profile includes full name, username, password, location, company, email, website, blog feed, twitter feed, facebook (?), etc.
+X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
+X Users can have their accounts "upgraded" to speaker, which will allow them to register availability for meetings, upload slides and other resources, etc.
+- Registered members should be able to register for meetings
+- Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting...yet the sign-in sheet should also be printable (including the # of blank lines to add)
+- Open-ID authentication would be a good idea
+- Link to Twitter feed for news...aggregate on the front page
+- Setup a Twitter account (DONE) and facebook presence
+- Make it possible to add sponsors and sponsor categories along with their logo and link
+X Allow members to rate events with a star rating
+X Allow members to add comments to an event
+- Setup proper security for ratings and comments
+X Aggregate blog feeds for members
+- Build in a prize drawing interface like I did for JugEvents
+- Send email notifications to registered users (upcoming events, etc.)
+X Users should be able to upload a mug shot for their profile, and for any events at which they are speaking (Currently using Gravatar for this)
+X Be able to designate a talk as a "lightning talk" with a cool icon
+X Link to speaker twitter feed on event page
+- Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
+- "Tweet" notable events on the website (event added/updated, topic added/updated, files added, members joined, etc.)
+- Add facebook link (icon) to user pages
+- Possibly setup the FootPrint certificate thing
+- Add search capabilities...search events, speakers, topics, etc.
+- Make it possible to show/hide user information (e.g. email, website, etc.)
+- Use Xwiki rendering throughout for user editable content
+- Update the star images from Rateable to look better on black bg
+
+Possible Plugins:
+
+X Commentable
+X Rateable
+- Grails File Uploader
+X Spring Security Plugin (Acegi)
+- Twitter Plugin
+- Recaptcha Plugin for registration
+- Mail Plugin
+- Blurb Plugin
+- Feed Plugin (for creating an RSS feed of our meeting postings)
+- Searchable
+X Xwiki Render
+
