@@ -1,7 +1,7 @@
 JUG Nexus Features
 
 X Create events, with date/time, location, speaker information, event abstracts
-- Embed Google Map to event
+X Embed Google Map to event
 
 API Key for localhost development: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w
 memphisjug.org production: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxRCCl3Cu310wKizRJBzKoUV2z9GZhTe65FZcjAmXyZM9K4XUwQwVRKlGA
@@ -12,6 +12,7 @@ X Users should be able to register for accounts
 X User profile includes full name, username, password, location, company, email, website, blog feed, twitter feed, facebook (?), etc.
 X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
 X Users can have their accounts "upgraded" to speaker, which will allow them to register availability for meetings, upload slides and other resources, etc.
+- Add the ability to upload files for a topic
 X Registered members should be able to register for meetings
 - Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting...yet the sign-in sheet should also be printable (including the # of blank lines to add)
 - Link to Twitter feed for news...aggregate on the front page
@@ -34,6 +35,7 @@ X Link to speaker twitter feed on event page
 - Make it possible to show/hide user information (e.g. email, website, etc.)
 X Use Xwiki rendering throughout for user editable content
 - Update the star images from Rateable to look better on black bg
+- Develop an iphone friendly web interface
 
 Possible Plugins:
 
