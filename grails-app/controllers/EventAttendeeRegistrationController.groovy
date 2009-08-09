@@ -96,4 +96,21 @@ class EventAttendeeRegistrationController {
             render(view:'create',model:[eventAttendeeRegistrationInstance:eventAttendeeRegistrationInstance])
         }
     }
+
+    def registerAttendee = {
+      def user = User.get(params.userId)
+      def event = Event.get(params.eventId)
+
+      new EventAttendeeRegistration(user: user, event: event).save()
+      redirect(controller: 'event', action:'show', id:event.id)
+    }
+
+    def unregisterAttendee = {
+      def user = User.get(params.userId)
+      def event = Event.get(params.eventId)
+
+      def registration = EventAttendeeRegistration.findByEventAndUser(event, user)
+      registration.delete()
+      redirect(controller: 'event', action:'show', id:event.id)            
+    }
 }
