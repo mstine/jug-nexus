@@ -17,12 +17,12 @@ class GoogleMapsTagLib {
       if (GBrowserIsCompatible()) {
         var map = new GMap2(document.getElementById("map_canvas"));
         map.setUIToDefault();
-        map.setMapType(G_HYBRID_MAP);
+        //map.setMapType(G_HYBRID_MAP);
 
         var address = '${attrs.location}';
 
         geocoder.getLatLng(address, function(point) {
-          map.setCenter(point, 19);
+          map.setCenter(point, 15);
 
           var marker = new GMarker(point);
           map.addOverlay(marker);

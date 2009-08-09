@@ -70,7 +70,7 @@
     </div>
 
   </div>
-  <h2>Directions:</h2>
+  <h2>Map:</h2>
   <gmap:map width="550px" height="300px"/>
   <div class="comments">
     <h2>Comments:</h2>
