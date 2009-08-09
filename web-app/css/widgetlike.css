@@ -143,6 +143,23 @@ img.right {
     vertical-align: middle;
 }
 
+.registration a {
+    text-decoration: none;
+}
+
+.registration img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.eventFull {
+    color: red;
+}
+
+.eventClosed {
+    color: blue;
+}
+
 /* Header */
 
 #header {
