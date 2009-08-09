@@ -3,6 +3,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="layout" content="main"/>
   <title>Show Event</title>
+  <g:javascript library="prototype"/>
+  <gmap:resources location="${eventInstance.location}"/>
   <rateable:resources/>
 </head>
 <body>
@@ -66,7 +68,10 @@
         </g:each>
       </ul>
     </div>
+
   </div>
+  <h2>Directions:</h2>
+  <gmap:map width="550px" height="300px"/>
   <div class="comments">
     <h2>Comments:</h2>
     <comments:render bean="${eventInstance}"/>
