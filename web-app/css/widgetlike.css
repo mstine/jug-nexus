@@ -160,6 +160,11 @@ img.right {
     color: blue;
 }
 
+
+#map_canvas {
+    margin-bottom: 20px;
+}
+
 /* Header */
 
 #header {
