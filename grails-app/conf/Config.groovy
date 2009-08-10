@@ -9,6 +9,9 @@
 // if(System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+twitter.username = 'memphisjug'
+twitter.password = '######'
+
 grails.commentable.poster.evaluator = { getAuthUserDomain() }
 grails.rateable.rater.evaluator = { getAuthUserDomain() }
 
