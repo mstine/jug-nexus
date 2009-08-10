@@ -15,8 +15,9 @@ X Users can have their accounts "upgraded" to speaker, which will allow them to 
 - Add the ability to upload files for a topic
 X Registered members should be able to register for meetings
 - Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting...yet the sign-in sheet should also be printable (including the # of blank lines to add)
-- Link to Twitter feed for news...aggregate on the front page
-- Setup a Twitter account (DONE) and facebook presence
+X Link to Twitter feed for news...aggregate on the front page
+X Cache twitter feeds
+X Setup a Twitter account	
 - Make it possible to add sponsors and sponsor categories along with their logo and link
 X Allow members to rate events with a star rating
 X Allow members to add comments to an event
