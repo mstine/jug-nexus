@@ -14,6 +14,8 @@ class Event implements Commentable, Rateable {
   int maxAttendees
   boolean registrationOpen = true
 
+  static searchable = true
+
   static hasMany = [registrations:EventAttendeeRegistration, speakers:EventSpeakerAssignment]
 
   static constraints = {

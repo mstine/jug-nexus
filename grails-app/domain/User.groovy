@@ -6,6 +6,8 @@ class User {
   static hasMany = [authorities: Role, eventsAttending: EventAttendeeRegistration, eventsSpeaking: EventSpeakerAssignment]
   static belongsTo = Role
 
+  static searchable = true
+
   String username
   /** MD5 Password   */
   String passwd

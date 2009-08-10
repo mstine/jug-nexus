@@ -6,6 +6,8 @@ class EventSpeakerAssignment {
   String topicAbstract
   boolean lightningTalk = false
 
+  static searchable = true
+
   static constraints = {
     event(nullable:false)
     user(nullable:false)
