@@ -51,12 +51,12 @@ Released   : 20081016
     </div>
     <!-- end #menu -->
     <div id="search">
-      <form method="get" action="#">
+      <g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
         <fieldset>
-          <input type="text" name="q" value="search keywords" id="q" class="text"/>
+          <g:textField id="q" name="q" value="search keywords" class="text" onfocus="this.select()"/>
           <input type="submit" value="Search" class="button"/>
         </fieldset>
-      </form>
+      </g:form>
     </div>
     <!-- end #search -->
   </div>
@@ -92,6 +92,10 @@ Released   : 20081016
                 </ul>
               </li>
             </g:ifAllGranted>
+            <li>
+              <h2>Twitter</h2>
+              <g:timeline/>
+            </li>
             <li>
               <h2>Ipsum sed interdum</h2>
               <ul>
