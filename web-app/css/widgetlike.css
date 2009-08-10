@@ -165,6 +165,19 @@ img.right {
     margin-bottom: 20px;
 }
 
+
+/* Search Page Stuff */
+
+#main .title {
+    margin-top: 20px;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+
+
 /* Header */
 
 #header {
