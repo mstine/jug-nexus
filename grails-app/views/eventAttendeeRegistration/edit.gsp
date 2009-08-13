@@ -45,7 +45,16 @@
                                 <td valign="top" class="value ${hasErrors(bean:eventAttendeeRegistrationInstance,field:'user','errors')}">
                                     <g:select optionKey="id" from="${User.list()}" name="user.id" value="${eventAttendeeRegistrationInstance?.user?.id}" ></g:select>
                                 </td>
-                            </tr> 
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="attended">Attended:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:eventAttendeeRegistrationInstance,field:'attended','errors')}">
+                                    <g:checkBox name="attended" value="${eventAttendeeRegistrationInstance?.attended}" ></g:checkBox>
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">

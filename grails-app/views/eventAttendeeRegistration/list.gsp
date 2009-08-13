@@ -27,6 +27,8 @@
 
         <th>User</th>
 
+        <g:sortableColumn property="attended" title="Attended"/>
+
         <g:sortableColumn property="raffleWinner" title="Raffle Winner"/>
 
       </tr>
@@ -40,6 +42,8 @@
           <td>${fieldValue(bean: eventAttendeeRegistrationInstance, field: 'event')}</td>
 
           <td>${fieldValue(bean: eventAttendeeRegistrationInstance, field: 'user')}</td>
+
+          <td>${fieldValue(bean: eventAttendeeRegistrationInstance, field: 'attended')}</td>
 
           <td>${fieldValue(bean: eventAttendeeRegistrationInstance, field: 'raffleWinner')}</td>
 

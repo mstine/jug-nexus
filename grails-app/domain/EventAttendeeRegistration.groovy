@@ -2,6 +2,7 @@ class EventAttendeeRegistration {
 
     Event event
     User user
+    boolean attended = false
     boolean raffleWinner = false
 
     static belongsTo = [event:Event,user:User]
@@ -9,6 +10,7 @@ class EventAttendeeRegistration {
     static constraints = {
       event()
       user()
+      attended()
       raffleWinner()
     }
 
