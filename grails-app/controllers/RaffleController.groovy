@@ -1,18 +1,17 @@
-import grails.converters.JSON
-
 class RaffleController {
+
+  def raffleService
 
   def index = {
     def event = Event.get(params.id)
-
-    [nonWinningParticipants: EventAttendeeRegistration.findAllByEventAndRaffleWinner(event, false),
+    [nonWinningParticipants: raffleService.findNonWinningParticipants(event),
             event: event,
-            winningParticipants: EventAttendeeRegistration.findAllByEventAndRaffleWinner(event, true)]
+            winningParticipants: raffleService.findWinningParticipants(event)]
   }
 
   def pickWinner = {
     def event = Event.get(params.id)
-    def attendees = EventAttendeeRegistration.findAllByEventAndRaffleWinner(event, false)
+    def attendees = raffleService.findNonWinningParticipants(event)
 
     int totalAttendees = attendees.size()
 
@@ -24,7 +23,7 @@ class RaffleController {
 
     render(contentType: "text/json") {
       nonWinners {
-        attendees.each { a ->
+        attendees.each {a ->
           nonWinner(id: a.id, firstName: a.user.firstName, lastName: a.user.lastName, raffleWinner: a.raffleWinner)
         }
       }
@@ -33,7 +32,7 @@ class RaffleController {
 
   def listWinners = {
     def event = Event.get(params.id)
-    def attendees = EventAttendeeRegistration.findAllByEventAndRaffleWinner(event, true);
+    def attendees = raffleService.findWinningParticipants(event)
 
     render(contentType: "text/json") {
       winners {
@@ -47,7 +46,7 @@ class RaffleController {
   def deleteWinner = {
     def winner = EventAttendeeRegistration.get(params.id)
     winner.raffleWinner = false
-    winner.save(flush:true)
+    winner.save(flush: true)
 
     render "OK"
   }
