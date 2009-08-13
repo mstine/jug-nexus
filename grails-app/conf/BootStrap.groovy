@@ -28,6 +28,18 @@ faucibus velit ultricies. Cras pretium urna quis velit egestas sed vulputate mau
                 firstName: "Michael", lastName: "Mayo",
                 email: "michael.mayo@gmail.com", whyIWantToJoin: "I write Android apps!", moderated: true).addToAuthorities(memberRole).save()
 
+       new User(username: "joeuser", passwd: authenticateService.encodePassword("password"),
+                firstName: "Joe", lastName: "User",
+                email: "joe.user@gmail.com", whyIWantToJoin: "Test", moderated: true).addToAuthorities(memberRole).save()
+
+       new User(username: "janeuser", passwd: authenticateService.encodePassword("password"),
+                firstName: "Jane", lastName: "User",
+                email: "jane.user@gmail.com", whyIWantToJoin: "Test", moderated: true).addToAuthorities(memberRole).save()
+
+       new User(username: "jeduser", passwd: authenticateService.encodePassword("password"),
+                firstName: "Jed", lastName: "User",
+                email: "Jed.user@gmail.com", whyIWantToJoin: "Test", moderated: true).addToAuthorities(memberRole).save()
+
        new Event(title: "Pragmatic JMS", startTime: new Date("01/01/2009 18:00:00"), endTime: new Date("01/01/2009 20:30:00"),
                  location: "X Building", directions: "See Google Maps!").save()
 
@@ -49,17 +61,14 @@ faucibus velit ultricies. Cras pretium urna quis velit egestas sed vulputate mau
                                   user: User.findByUsername("mmayo"),
                                   topic: "Bay Area Ruby Lovers", topicAbstract: "Test").save()
 
-       new EventAttendeeRegistration(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: User.findByUsername("mmayo")).save()
+       def event = Event.findByTitle("Bay Area Ruby Lovers")
 
-       new EventAttendeeRegistration(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: User.findByUsername("jneely")).save()
-
-       new EventAttendeeRegistration(event: Event.findByTitle("Bay Area Ruby Lovers"),
-                                  user: User.findByUsername("mstine")).save()
-
-
-
+       event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("mmayo"))).save()
+       event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("jneely"))).save()
+       event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("mstine"))).save()
+       event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("joeuser"))).save()
+       event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("janeuser"))).save()
+       event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("jeduser"))).save()
 
      }
      def destroy = {
