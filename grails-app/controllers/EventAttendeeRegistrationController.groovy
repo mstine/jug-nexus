@@ -12,6 +12,19 @@ class EventAttendeeRegistrationController {
         [ eventAttendeeRegistrationInstanceList: EventAttendeeRegistration.list( params ), eventAttendeeRegistrationInstanceTotal: EventAttendeeRegistration.count() ]
     }
 
+    def listForEvent = {
+      def event = Event.get(params.id)
+      [ event: event]
+    }
+
+    def setAttendeeIsHere = {
+      def attendee = EventAttendeeRegistration.get(params.id)
+      attendee.attended = true
+      attendee.save(flush:true)
+
+      render """<img src="${resource(dir:'images', file: 'ok.png')}"/>"""
+    }
+
     def show = {
         def eventAttendeeRegistrationInstance = EventAttendeeRegistration.get( params.id )
 
