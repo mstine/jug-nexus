@@ -23,7 +23,7 @@ X Allow members to rate events with a star rating
 X Allow members to add comments to an event
 - Setup proper security for ratings and comments
 X Aggregate blog feeds for members
-- Build in a prize drawing interface like I did for JugEvents
+X Build in a prize drawing interface like I did for JugEvents (now is at least as good as JugEvents...uses Grails JSON rendering + Prototype rather than DWR...a much more "SOFEA" like solution)
 - Send email notifications to registered users (upcoming events, etc.)
 X Users should be able to upload a mug shot for their profile, and for any events at which they are speaking (Currently using Gravatar for this)
 X Be able to designate a talk as a "lightning talk" with a cool icon
@@ -44,11 +44,14 @@ X Commentable
 X Rateable
 - Grails File Uploader
 X Spring Security Plugin (Acegi)
-- Twitter Plugin
+X Twitter Plugin
 - Recaptcha Plugin for registration
 - Mail Plugin
 - Blurb Plugin
 - Feed Plugin (for creating an RSS feed of our meeting postings)
-- Searchable
+X Searchable
 X Xwiki Render
+X Quartz
+X Avatar
+X yui
 
