@@ -13,6 +13,7 @@ class Event implements Commentable, Rateable {
   boolean archived = false
   int maxAttendees
   boolean registrationOpen = true
+  List registrations
 
   static searchable = true
 

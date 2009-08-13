@@ -4,9 +4,11 @@ class EventAttendeeRegistration {
     User user
     boolean raffleWinner = false
 
+    static belongsTo = [event:Event,user:User]
+
     static constraints = {
-      event(nullable:false)
-      user(nullable:false)
+      event()
+      user()
       raffleWinner()
     }
 
