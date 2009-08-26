@@ -1,45 +1,50 @@
 JUG Nexus Features
 
+First Release:
+
+- "Tweet" notable events on the website (event added/updated, topic added/updated, files added, members joined, etc.)
+- Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
+- Add facebook link (icon) to user pages
+- Add the ability to upload files for a topic
+- Display "human written" directions under the Google Map...(i.e. "Gate is on 3rd Street. Buzz in at the gate...")
+- Fix the HORRIBLE styling on the login screen
+- Make it possible to add sponsors and sponsor categories along with their logo and link
+- Make it possible to show/hide user information (e.g. email, website, etc.)
+- Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
+- Send email notifications to registered users (upcoming events, etc.)
+- Setup proper security for ratings and comments
+X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
+X Add search capabilities...search events, speakers, topics, etc.
+X Aggregate blog feeds for members
+X Allow members to add comments to an event
+X Allow members to rate events with a star rating
+X Be able to designate a talk as a "lightning talk" with a cool icon
+X Build in a prize drawing interface like I did for JugEvents (now is at least as good as JugEvents...uses Grails JSON rendering + Prototype rather than DWR...a much more "SOFEA" like solution)
+X Cache twitter feeds
 X Create events, with date/time, location, speaker information, event abstracts
 X Embed Google Map to event
+X Events should be able to have multiple speakers and abstracts (lightning round, code camp?)
+X Link to speaker twitter feed on event page
+X Link to Twitter feed for news...aggregate on the front page
+X Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting
+X Registered members should be able to register for meetings
+X Setup a FaceBook group (http://www.facebook.com/group.php?gid=143824172597&ref=mf)	
+X Setup a Twitter account (http://twitter.com/memphisjug)
+X Should be able to set a max registration for an event, whether registration is open or closed, etc.
+X Use Xwiki rendering throughout for user editable content
+X User profile includes full name, username, password, location, company, email, website, blog feed, twitter feed, facebook (?), etc.
+X Users can have their accounts "upgraded" to speaker, which will allow them to register availability for meetings, upload slides and other resources, etc.
+X Users should be able to register for accounts
+X Users should be able to upload a mug shot for their profile, and for any events at which they are speaking (Currently using Gravatar for this)
 
-API Key for localhost development: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w
-memphisjug.org production: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxRCCl3Cu310wKizRJBzKoUV2z9GZhTe65FZcjAmXyZM9K4XUwQwVRKlGA
+
+Future Release:
 
 - Add a way to generate Google Maps directions from any location	
-- Display "human written" directions under the Google Map...(i.e. "Gate is on 3rd Street. Buzz in at the gate...")
-X Events should be able to have multiple speakers and abstracts (lightning round, code camp?)
-X Should be able to set a max registration for an event, whether registration is open or closed, etc.
-X Users should be able to register for accounts
-X User profile includes full name, username, password, location, company, email, website, blog feed, twitter feed, facebook (?), etc.
-X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
-X Users can have their accounts "upgraded" to speaker, which will allow them to register availability for meetings, upload slides and other resources, etc.
-- Add the ability to upload files for a topic
-X Registered members should be able to register for meetings
-X Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting
-X Link to Twitter feed for news...aggregate on the front page
-X Cache twitter feeds
-X Setup a Twitter account (http://twitter.com/memphisjug)
-X Setup a FaceBook group (http://www.facebook.com/group.php?gid=143824172597&ref=mf)	
-- Make it possible to add sponsors and sponsor categories along with their logo and link
-X Allow members to rate events with a star rating
-X Allow members to add comments to an event
-- Setup proper security for ratings and comments
-X Aggregate blog feeds for members
-X Build in a prize drawing interface like I did for JugEvents (now is at least as good as JugEvents...uses Grails JSON rendering + Prototype rather than DWR...a much more "SOFEA" like solution)
-- Send email notifications to registered users (upcoming events, etc.)
-X Users should be able to upload a mug shot for their profile, and for any events at which they are speaking (Currently using Gravatar for this)
-X Be able to designate a talk as a "lightning talk" with a cool icon
-X Link to speaker twitter feed on event page
-- Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
-- "Tweet" notable events on the website (event added/updated, topic added/updated, files added, members joined, etc.)
-- Add facebook link (icon) to user pages
 - Possibly setup the FootPrint certificate thing
-X Add search capabilities...search events, speakers, topics, etc.
-- Make it possible to show/hide user information (e.g. email, website, etc.)
-X Use Xwiki rendering throughout for user editable content
 - Update the star images from Rateable to look better on black bg
 - Develop an iphone friendly web interface
+
 
 Possible Plugins:
 
@@ -57,4 +62,13 @@ X Xwiki Render
 X Quartz
 X Avatar
 X yui
+
+Bugs:
+
+- When I unregister an attendee that was added during in BootStrap, the taglib breaks w/ a NPE.
+
+Other Info:
+
+API Key for localhost development: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w
+memphisjug.org production: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxRCCl3Cu310wKizRJBzKoUV2z9GZhTe65FZcjAmXyZM9K4XUwQwVRKlGA
 
