@@ -21,6 +21,7 @@ class User {
   String blogFeed
   String twitterNickname
   boolean moderated = false
+  boolean speakerOnly = false
   String whyIWantToJoin
 
   /** plain password to create a MD5 password   */
