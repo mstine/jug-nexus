@@ -42,11 +42,10 @@ Released   : 20081016
   <div id="header2">
     <div id="menu">
       <ul>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Speakers</a></li>
-        <li><a href="#">Members</a></li>
-        <li><a href="#">Topics</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><g:link controller="event">Events</g:link></li>
+        <li><g:link controller="user" action="speakers">Speakers</g:link></li>
+        <li><g:link controller="user" action="members">Members</g:link></li>
+        <li><g:link controller="eventSpeakerAssignment">Topics</g:link></li>
       </ul>
     </div>
     <!-- end #menu -->
@@ -84,11 +83,8 @@ Released   : 20081016
               <li>
                 <h2>Admin Navigation</h2>
                 <ul>
-                  <li><g:link controller="event">Events</g:link></li>
                   <li><g:link controller="user">Users</g:link></li>
                   <li><g:link controller="role">Roles</g:link></li>
-                  <li><g:link controller="eventAttendeeRegistration">Registrations</g:link></li>
-                  <li><g:link controller="eventSpeakerAssignment">Speaker Assignments</g:link></li>
                 </ul>
               </li>
             </g:ifAllGranted>
@@ -97,16 +93,20 @@ Released   : 20081016
               <g:timeline/>
             </li>
             <li>
-              <h2>Ipsum sed interdum</h2>
-              <ul>
-                <li><a href="#">Sed vel quam vestibulum</a></li>
-                <li><a href="#">Pellentesque morbi sit veroeros</a></li>
-                <li><a href="#">Magna interdum donec pede</a></li>
-                <li><a href="#">Nisl gravida iaculis auctor vitae</a></li>
-                <li><a href="#">Bibendum sit amet mauris cras</a></li>
-                <li><a href="#">Adipiscing libero et risus donec</a></li>
-                <li><a href="#">Venenatis porttitor morbi quam</a></li>
-              </ul>
+              <h2>Google Group</h2>
+              <div style="text-align: center">
+                <p><strong>Subscribe to Memphis/Mid-South Java User Group</strong></p>
+                <form action="http://groups.google.com/group/memphis-mid-south-jug/boxsubscribe">
+                  <label for="email">Email:</label><br/><input id="email" type="text" name="email"/><br/>
+                  <input type="submit" value="Subscribe" name="sub"/>
+                </form>
+                <p>
+                  <a href="http://groups.google.com/group/memphis-mid-south-jug">Visit this group</a>
+                </p>
+              </div>
+              <p style="text-align:center"><img src="${resource(dir: 'images', file: 'JUG_Button-full.jpg')}"/></p>
+              <p style="text-align:center"><a href="http://java.net"><img style="border: 0;" src="${resource(dir: 'images', file: 'javanet_button_170-full.jpg')}"/></a></p>
+              <p style="text-align:center"><a href="http://jug-usa.dev.java.net/"><img style="width: 180px; height: 80px; border: 0" src="${resource(dir: 'images', file: 'jug-usa-lg.jpg')}"/></a></p>
             </li>
             <li>
               <h2>Powered By</h2>
