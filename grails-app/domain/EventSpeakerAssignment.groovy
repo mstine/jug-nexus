@@ -1,5 +1,6 @@
 import org.grails.comments.Commentable
 import org.grails.rateable.Rateable
+import com.lucastex.grails.fileuploader.UFile
 
 class EventSpeakerAssignment implements Commentable, Rateable {
 
@@ -8,6 +9,8 @@ class EventSpeakerAssignment implements Commentable, Rateable {
   String topic
   String topicAbstract
   boolean lightningTalk = false
+
+  static hasMany = [files:UFile]
 
   static searchable = true
 
