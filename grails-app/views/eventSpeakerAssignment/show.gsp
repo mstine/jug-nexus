@@ -29,10 +29,48 @@
       <li><strong>Speaker:</strong> <g:link controller="user" action="show" id="${eventSpeakerAssignmentInstance?.user?.id}">${eventSpeakerAssignmentInstance?.user?.encodeAsHTML()}</g:link></li>
       <li><strong>Event:</strong> <g:link controller="event" action="show" id="${eventSpeakerAssignmentInstance?.event?.id}">${eventSpeakerAssignmentInstance?.event?.encodeAsHTML()}</g:link></li>
     </ul>
-    </p>
+  </p>
     <div class="topicAbstract"><g:xwikiRender>${fieldValue(bean: eventSpeakerAssignmentInstance, field: 'topicAbstract')}</g:xwikiRender></div>
 
   </div>
+
+  <div class="slides">
+    <h2>Files available:</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Date Uploaded</th>
+        <th>Downloads</th>
+      </tr>
+      </thead>
+      <tbody>
+      <g:each in="${eventSpeakerAssignmentInstance.files}" var="file">
+        <tr>
+          <td><fileuploader:download id="${file.id}" errorAction="show" errorController="eventSpeakerAssignment">${file.name}</fileuploader:download></td>
+          <td><fileuploader:prettysize size="${file.size}"/></td>
+          <td><g:formatDate format="MM/dd/yyyy" date="${file.dateUploaded}"/></td>
+          <td>${file.downloads}</td>
+        </tr>
+      </g:each>
+      </tbody>
+    </table>
+  </div>
+
+  <g:ifAllGranted role="ROLE_ADMIN">
+    <div class="slideUpload">
+      <h2>Add a file:</h2>
+      <fileuploader:form upload="slides"
+              successAction="addFile"
+              successController="eventSpeakerAssignment"
+              successId="${eventSpeakerAssignmentInstance.id}"
+              errorAction="show"
+              errorController="eventSpeakerAssignment"
+              errorId="${eventSpeakerAssignmentInstance.id}"/>
+    </div>
+  </g:ifAllGranted>
+
   <div class="comments">
     <h2>Comments:</h2>
     <comments:render bean="${eventSpeakerAssignmentInstance}"/>
