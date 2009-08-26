@@ -85,6 +85,8 @@ Released   : 20081016
                 <ul>
                   <li><g:link controller="user">Users</g:link></li>
                   <li><g:link controller="role">Roles</g:link></li>
+                  <li><g:link controller="sponsorGroup">Sponsor Groups</g:link></li>
+                  <li><g:link controller="sponsor">Sponsors</g:link></li>
                 </ul>
               </li>
             </g:ifAllGranted>
@@ -107,6 +109,24 @@ Released   : 20081016
               <p style="text-align:center"><img src="${resource(dir: 'images', file: 'JUG_Button-full.jpg')}"/></p>
               <p style="text-align:center"><a href="http://java.net"><img style="border: 0;" src="${resource(dir: 'images', file: 'javanet_button_170-full.jpg')}"/></a></p>
               <p style="text-align:center"><a href="http://jug-usa.dev.java.net/"><img style="width: 180px; height: 80px; border: 0" src="${resource(dir: 'images', file: 'jug-usa-lg.jpg')}"/></a></p>
+            </li>
+            <li>
+              <h2>Sponsors</h2>
+              <g:each in="${SponsorGroup.list()}" var="sponsorGroup">
+                <h3 style="text-align: center">${sponsorGroup.name}</h3>
+                <g:each in="${sponsorGroup.sponsors}" var="sponsor">
+                  <p style="text-align: center">
+                    <a href="${sponsor.url}">
+                      <g:if test="${sponsor.logo}">
+                        <img style="border: 0" src="${createLink(controller:'download',id:sponsor.logo.id)}"/>
+                      </g:if>
+                      <g:else>
+                        ${sponsor.name}
+                      </g:else>
+                    </a>
+                  </p>
+                </g:each>
+              </g:each>
             </li>
             <li>
               <h2>Powered By</h2>
