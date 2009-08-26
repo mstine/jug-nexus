@@ -19,6 +19,18 @@ class UserController {
     [personList: User.list(params)]
   }
 
+  def members = {
+    [users: User.findAllBySpeakerOnly(false)]
+  }
+
+  def speakers = {
+    def users = User.createCriteria().list {
+      isNotEmpty("eventsSpeaking")
+    }
+
+    [users: users]
+  }
+
   def show = {
     def person = User.get(params.id)
     if (!person) {
