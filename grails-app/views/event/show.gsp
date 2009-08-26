@@ -66,6 +66,8 @@
   </div>
   <h2>Map:</h2>
   <gmap:map width="550px" height="300px"/>
+  <h2>Directions:</h2>
+  <div class="directions"><g:xwikiRender>${eventInstance.directions}</g:xwikiRender></div>
   <div class="comments">
     <h2>Comments:</h2>
     <comments:render bean="${eventInstance}"/>

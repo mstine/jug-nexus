@@ -70,7 +70,7 @@
                                     <label for="directions">Directions:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:eventInstance,field:'directions','errors')}">
-                                    <input type="text" id="directions" name="directions" value="${fieldValue(bean:eventInstance,field:'directions')}"/>
+                                    <textarea rows="5" cols="40" id="directions" name="directions">${fieldValue(bean:eventInstance,field:'directions')}</textarea>
                                 </td>
                             </tr> 
                         
