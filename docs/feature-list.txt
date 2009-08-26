@@ -3,11 +3,10 @@ JUG Nexus Features
 First Release:
 
 - "Tweet" notable events on the website (event added/updated, topic added/updated, files added, members joined, etc.)
-- Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
+X Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
 - Add facebook link (icon) to user pages
 - Add the ability to upload files for a topic
-- Display "human written" directions under the Google Map...(i.e. "Gate is on 3rd Street. Buzz in at the gate...")
-- Fix the HORRIBLE styling on the login screen
+X Display "human written" directions under the Google Map...(i.e. "Gate is on 3rd Street. Buzz in at the gate...")
 - Make it possible to add sponsors and sponsor categories along with their logo and link
 - Make it possible to show/hide user information (e.g. email, website, etc.)
 - Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
@@ -24,6 +23,7 @@ X Cache twitter feeds
 X Create events, with date/time, location, speaker information, event abstracts
 X Embed Google Map to event
 X Events should be able to have multiple speakers and abstracts (lightning round, code camp?)
+X Fix the HORRIBLE styling on the login screen
 X Link to speaker twitter feed on event page
 X Link to Twitter feed for news...aggregate on the front page
 X Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting
@@ -36,6 +36,7 @@ X User profile includes full name, username, password, location, company, email,
 X Users can have their accounts "upgraded" to speaker, which will allow them to register availability for meetings, upload slides and other resources, etc.
 X Users should be able to register for accounts
 X Users should be able to upload a mug shot for their profile, and for any events at which they are speaking (Currently using Gravatar for this)
+
 
 
 Future Release:
@@ -66,6 +67,8 @@ X yui
 Bugs:
 
 - When I unregister an attendee that was added during in BootStrap, the taglib breaks w/ a NPE.
+
+- Need to fix bug in commentable plugin (local fix only at this point)
 
 Other Info:
 
