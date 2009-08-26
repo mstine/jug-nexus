@@ -1,4 +1,4 @@
-
+import com.lucastex.grails.fileuploader.UFile
 
 class EventSpeakerAssignmentController {
     
@@ -96,5 +96,15 @@ class EventSpeakerAssignmentController {
         else {
             render(view:'create',model:[eventSpeakerAssignmentInstance:eventSpeakerAssignmentInstance])
         }
+    }
+
+    def addFile = {
+      UFile uploadedFile = UFile.get(params.ufileId)
+      EventSpeakerAssignment eventSpeakerAssignment = EventSpeakerAssignment.get(params.id)
+
+      eventSpeakerAssignment.addToFiles(uploadedFile)
+      eventSpeakerAssignment.save()
+
+      redirect action: "show", id: params.id
     }
 }
