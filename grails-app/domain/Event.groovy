@@ -15,18 +15,23 @@ class Event implements Commentable, Rateable {
   boolean registrationOpen = true
   List registrations
 
+  static mapping = {
+    sort startTime: "desc"
+  }
+
+
   static searchable = true
 
-  static hasMany = [registrations:EventAttendeeRegistration, speakers:EventSpeakerAssignment]
+  static hasMany = [registrations: EventAttendeeRegistration, speakers: EventSpeakerAssignment]
 
   static constraints = {
-    title(blank:false)
-    startTime(blank:false)
-    endTime(blank:false)
-    location(blank:false)
-    directions(blank:false)
-    description(nullable:true, maxSize:4000)
-    maxAttendees(min:0)
+    title(blank: false)
+    startTime(blank: false)
+    endTime(blank: false)
+    location(blank: false)
+    directions(blank: false)
+    description(nullable: true, maxSize: 4000)
+    maxAttendees(min: 0)
     registrationOpen()
     onHomePage()
     archived()
