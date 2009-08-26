@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
-  <component name="AntConfiguration">
-    <defaultAnt bundledAnt="true" />
-  </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
@@ -36,15 +33,8 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="EclipseCompilerSettings">
-    <option name="DEBUGGING_INFO" value="true" />
-    <option name="GENERATE_NO_WARNINGS" value="true" />
-    <option name="DEPRECATION" value="false" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="" />
-    <option name="MAXIMUM_HEAP_SIZE" value="128" />
-  </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="IdProvider" IDEtalkID="0A5B8C92003B5BD44D3E584AEDDBEEE6" />
+  <component name="IdProvider" IDEtalkID="FB0F06C9AB032875BB86359823EF9FB2" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -53,34 +43,9 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="JpaDataSourceORMInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="JpaDataSourceORMDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbErrorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbWarningInspection" level="WARNING" enabled="false" />
-        <inspection_tool class="EjbDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="EjbQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="JavaeeApplicationDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="MimeType" level="ERROR" enabled="false" />
-        <inspection_tool class="JpaORMDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="JpaModelErrorInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="JpaModelWarningInspection" level="WARNING" enabled="false" />
-        <inspection_tool class="JpaQlInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="JpaQueryApiInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="JpaDomInspection" level="ERROR" enabled="false" />
-        <inspection_tool class="ReferencesToClassesFromDefaultPackagesInJSPFile" level="ERROR" enabled="false" />
-        <inspection_tool class="SelfIncludingJspFiles" level="ERROR" enabled="false" />
-        <inspection_tool class="WebProperties" level="ERROR" enabled="false" />
-        <inspection_tool class="WebWarnings" level="WARNING" enabled="false" />
       </profile>
     </profiles>
     <list size="0" />
-  </component>
-  <component name="JavacSettings">
-    <option name="DEBUGGING_INFO" value="true" />
-    <option name="GENERATE_NO_WARNINGS" value="false" />
-    <option name="DEPRECATION" value="true" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="" />
-    <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
@@ -98,14 +63,6 @@
     <option name="HEAP_SIZE" />
     <option name="LOCALE" />
     <option name="OPEN_IN_BROWSER" value="true" />
-  </component>
-  <component name="JikesSettings">
-    <option name="JIKES_PATH" value="" />
-    <option name="DEBUGGING_INFO" value="true" />
-    <option name="DEPRECATION" value="true" />
-    <option name="GENERATE_NO_WARNINGS" value="false" />
-    <option name="IS_EMACS_ERRORS_MODE" value="true" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="Palette2">
     <group name="Swing">
@@ -243,12 +200,12 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
-  <component name="RmicSettings">
-    <option name="IS_EANABLED" value="false" />
-    <option name="DEBUGGING_INFO" value="true" />
-    <option name="GENERATE_NO_WARNINGS" value="false" />
-    <option name="GENERATE_IIOP_STUBS" value="false" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="" />
+  <component name="ResourceManagerContainer">
+    <option name="myResourceBundles">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
@@ -258,81 +215,98 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
-    <library name="Grails 1.2-M1">
+    <library name="Grails 1.2-M2">
       <CLASSES>
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ant-1.7.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ant-junit-1.7.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ant-launcher-1.7.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ant-nodeps-1.7.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ant-trax.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/antlr-2.7.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/backport-util-concurrent-3.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/cglib-nodep-2.1_3.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-beanutils-1.7.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-cli-1.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-codec-1.3.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-collections-3.2.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-dbcp-1.2.1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-el-1.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-fileupload-1.2.1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-io-1.4.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-lang-2.4.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-pool-1.2.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/commons-validator-1.3.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ehcache-1.5.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ejb3-persistence-3.3.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/gant_groovy1.6-1.6.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/groovy-all-1.6.3.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/hsqldb-1.8.0.5.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ivy-2.0.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jasper-compiler-5.5.15.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jasper-compiler-jdt-5.5.15.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jasper-runtime-5.5.15.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jcl-over-slf4j-1.5.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jetty-6.1.14.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jetty-naming-6.1.14.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jetty-plus-6.1.14.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jetty-util-6.1.14.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jline-0.9.91.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jsp-api-2.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jsp-api-2.1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jsr107cache-1.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jstl-2.3.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jstl-2.4.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/jta-1.1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/junit-3.8.2.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/log4j-1.2.15.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/ognl-2.6.9.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/org.springframework.binding-2.0.3.RELEASE.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/org.springframework.js-2.0.3.RELEASE.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/org.springframework.webflow-2.0.3.RELEASE.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/oro-2.0.8.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/oscache-2.4.1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/radeox.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/serializer.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/servlet-api-2.5-6.1.14.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/sitemesh-2.4.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/slf4j-api-1.5.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/slf4j-log4j12-1.5.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/spring-2.5.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/spring-test-2.5.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/spring-webmvc-2.5.6.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/standard-2.3.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/standard-2.4.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/start.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/svnkit-1.2.0.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/lib/xpp3_min-1.1.3.4.O.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-bootstrap-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-core-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-crud-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-docs-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-gorm-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-resources-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-scripts-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-spring-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-test-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-web-1.2-M1.jar!/" />
-        <root url="jar:///Users/mstine/Tools/grails-1.2-M1/diest/grails-webflow-1.2-M1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ant-1.7.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ant-junit-1.7.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ant-launcher-1.7.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ant-nodeps-1.7.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ant-trax.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/antlr-2.7.6.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/aopalliance-1.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/backport-util-concurrent-3.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/cglib-nodep-2.1_3.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-beanutils-1.8.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-cli-1.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-codec-1.3.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-collections-3.2.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-dbcp-1.2.2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-el-1.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-fileupload-1.2.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-io-1.4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-lang-2.4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-pool-1.5.2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/commons-validator-1.3.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ehcache-1.6.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ejb3-persistence-3.3.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/gant_groovy1.6-1.6.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/groovy-all-1.6.4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/hibernate-annotations-3.4.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/hibernate-commons-annotations-3.4.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/hibernate3-3.3.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/hsqldb-1.8.0.10.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ivy-2.0.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jasper-compiler-5.5.15.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jasper-compiler-jdt-5.5.15.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jasper-runtime-5.5.15.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jcl-over-slf4j-1.5.6.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jline-0.9.91.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jsp-api-2.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jsp-api-2.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jsr107cache-1.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jstl-2.3.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jstl-2.4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jta-1.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/jul-to-slf4j-1.5.6.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/junit-3.8.2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/log4j-1.2.15.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/ognl-2.6.9.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.aop-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.asm-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.aspects-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.beans-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.binding-2.0.3.RELEASE.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.context-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.context.support-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.core-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.expression-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.instrument-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.instrument.classloading-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.integration-tests-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.jdbc-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.jms-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.js-2.0.3.RELEASE.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.orm-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.oxm-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.test-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.transaction-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.web-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.web.servlet-3.0.0.M4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/org.springframework.webflow-2.0.3.RELEASE.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/oro-2.0.8.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/oscache-2.4.1.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/radeox.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/serializer.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/servlet-api-2.5-6.1.14.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/sitemesh-2.4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/slf4j-api-1.5.6.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/slf4j-log4j12-1.5.6.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/standard-2.3.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/standard-2.4.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/start.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/svnkit-1.2.0.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/lib/xpp3_min-1.1.3.4.O.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-bootstrap-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-core-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-crud-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-docs-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-gorm-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-resources-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-scripts-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-spring-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-test-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-web-1.2-M2.jar!/" />
+        <root url="jar:///Users/mstine/Tools/grails-1.2-M2/diest/grails-webflow-1.2-M2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
