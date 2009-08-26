@@ -1,4 +1,7 @@
-class EventSpeakerAssignment {
+import org.grails.comments.Commentable
+import org.grails.rateable.Rateable
+
+class EventSpeakerAssignment implements Commentable, Rateable {
 
   Event event
   User user
