@@ -10,7 +10,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 twitter.username = 'memphisjug'
-twitter.password = '######'
+twitter.password = '#######'
 
 grails.commentable.poster.evaluator = { getAuthUserDomain() }
 grails.rateable.rater.evaluator = { getAuthUserDomain() }
@@ -61,6 +61,8 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
+    debug "grails.app"
+
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
 	       'org.codehaus.groovy.grails.web.pages', //  GSP
 	       'org.codehaus.groovy.grails.web.sitemesh', //  layouts
@@ -81,3 +83,19 @@ log4j = {
 //log4j.logger.org.springframework.security='off,stdout'
 
 //log4j.logger.org.springframework.security='off,stdout'
+
+fileuploader {
+
+  slides {
+    maxSize = 1000 * 1024 * 10 //10 MB
+    allowedExtensions = ["pdf", "ppt", "pptx", "key"]
+    path = "/Users/mstine/tmp/slides"
+  }
+
+  logos {
+    maxSize = 1000 * 1024 * 1 //1 MB
+    allowedExtensions = ["gif", "jpg", "png"]
+    path = "/Users/mstine/tmp/logos"
+  }
+
+}
