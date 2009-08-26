@@ -17,6 +17,16 @@ ut nisl commodo pharetra. Mauris mi purus, volutpat a faucibus nec, viverra sit 
 fermentum dapibus elit, nec dictum odio vestibulum eu. Cras enim metus, facilisis eget blandit a, viverra vel leo. Duis hendrerit massa quis magna semper quis
 faucibus velit ultricies. Cras pretium urna quis velit egestas sed vulputate mauris vulputate. Duis nec erat nec tortor tempor placerat sed id tellus.""").addToAuthorities(memberRole).addToAuthorities(adminRole).addToAuthorities(speakerRole).save()
 
+    new User(username: "kdonald", passwd: authenticateService.encodePassword("password"),
+            firstName: "Keith", lastName: "Donald",
+            email: "keith.donald@springsource.com", whyIWantToJoin: "I started the JUG!", moderated: true, bio: """Our speaker for this event is Keith Donald. Keith is a principal and founding partner at SpringSource, the company behind Spring. He is best known in the Spring community for creating Spring Web Flow. At SpringSource, Keith is the lead of the Web Application Development Products Team. His team, based in Melbourne, Florida, sustains the development of Spring MVC and Web Flow and their associated integrations, and is also responsible for future innovations in the domain of web application development frameworks.
+
+Since the first Spring Experience in 2005, Keith, with Jay Zimmerman of NoFluffJustStuff Software Symposiums, has served as director of the popular conference series.
+
+Keith is also the principal architect behind SpringSource’s state-of-the-art training curriculum, which has provided practical training on Spring to over 3000 students worldwide.
+
+Over his career, Keith, an experienced enterprise software developer and mentor, has built business applications for customers spanning a diverse set of industries including banking, network management, information assurance, education, and retail. He is particularly adept at translating business requirements into technical solutions. """).addToAuthorities(memberRole).addToAuthorities(adminRole).addToAuthorities(speakerRole).save()
+
     new User(username: "jneely", passwd: authenticateService.encodePassword("password"),
             firstName: "Joel", lastName: "Neely",
             email: "joel.neely@gmail.com", whyIWantToJoin: "I've been coding since the 60's!", moderated: true).addToAuthorities(memberRole).save()
