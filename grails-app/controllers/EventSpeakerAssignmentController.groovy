@@ -88,6 +88,7 @@ class EventSpeakerAssignmentController {
 
     def save = {
         def eventSpeakerAssignmentInstance = new EventSpeakerAssignment(params)
+        eventSpeakerAssignmentInstance.merge()
         if(eventSpeakerAssignmentInstance.save()) {
             flash.message = "EventSpeakerAssignment ${eventSpeakerAssignmentInstance.id} created"
             redirect(action:show,id:eventSpeakerAssignmentInstance.id)
