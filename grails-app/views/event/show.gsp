@@ -13,6 +13,7 @@
     <span class="menuButton"><a class="home" href="${resource(dir: '')}">Home</a></span>
     <span class="menuButton"><g:link class="list" action="list">Event List</g:link></span>
     <span class="menuButton"><g:link class="create" action="create">New Event</g:link></span>
+    <span class="menuButton"><g:link class="create" controller="raffle" action="index" id="${eventInstance.id}">Raffle</g:link></span>
   </div>
 </g:ifAllGranted>
 <g:if test="${flash.message}">
@@ -36,6 +37,7 @@
           ${fieldValue(bean: eventInstance, field: 'location')}</h2>
       </div>
       <g:registerForEvent event="${eventInstance}"/>
+      <h2><g:link class="list" controller="eventAttendeeRegistration" action="listForEvent" id="${eventInstance.id}">Who's Coming?</g:link></h2>
       <g:ifAllGranted role="ROLE_ADMIN">
         <div class="eventAdminDetails">
           <ul>
@@ -43,14 +45,6 @@
             <li><strong>Registration Open:</strong> ${fieldValue(bean: eventInstance, field: 'registrationOpen')}</li>
             <li><strong>On Home Page:</strong> ${fieldValue(bean: eventInstance, field: 'onHomePage')}</li>
             <li><strong>Archived:</strong> ${fieldValue(bean: eventInstance, field: 'archived')}</li>
-          </ul>
-
-          <h2>Registrations:</h2>
-
-          <ul>
-            <g:each var="r" in="${eventInstance.registrations}">
-              <li><g:link controller="eventAttendeeRegistration" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
-            </g:each>
           </ul>
         </div>
       </g:ifAllGranted>

@@ -187,6 +187,14 @@
         </tr>
 
         <tr class="prop">
+          <td valign="top" class="name">
+            <label for="speakerOnly">Speaker Only:</label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: person, field: 'speakerOnly', 'errors')}">
+            <g:checkBox name="speakerOnly" value="${person?.speakerOnly}"></g:checkBox>
+          </td>
+
+        <tr class="prop">
           <td valign="top" class="name"><label for="authorities">Roles:</label></td>
           <td valign="top" class="value ${hasErrors(bean: person, field: 'authorities', 'errors')}">
             <ul>

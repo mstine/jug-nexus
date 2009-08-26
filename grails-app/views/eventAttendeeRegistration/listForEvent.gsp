@@ -6,10 +6,6 @@
   <g:javascript library="prototype"/>
 </head>
 <body>
-<div class="nav">
-  <span class="menuButton"><a class="home" href="${resource(dir: '')}">Home</a></span>
-  <span class="menuButton"><g:link class="create" action="create">New EventAttendeeRegistration</g:link></span>
-</div>
 <div class="post">
   <div class="title">
     <h2>Event Registrations for ${event.title}</h2>
