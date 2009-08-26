@@ -29,7 +29,7 @@ class Event implements Commentable, Rateable {
     startTime(blank: false)
     endTime(blank: false)
     location(blank: false)
-    directions(blank: false)
+    directions(blank: false, maxSize: 4000)
     description(nullable: true, maxSize: 4000)
     maxAttendees(min: 0)
     registrationOpen()
