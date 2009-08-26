@@ -2381,6 +2381,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/commentable-0.7.4/grails-app/domain" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/commentable-0.7.4/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/commentable-0.7.4/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/file-uploader-1.1/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/file-uploader-1.1/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/file-uploader-1.1/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/quartz-0.4.1/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/quartz-0.4.1/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../.grails/1.2-M2/projects/jugNexus/plugins/quartz-0.4.1/src/java" isTestSource="false" />
