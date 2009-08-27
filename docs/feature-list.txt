@@ -6,7 +6,7 @@ First Release:
 - Make it possible to show/hide user information (e.g. email, website, etc.)
 - Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
 - Send email notifications to registered users (upcoming events, etc.)
-- Setup proper security for ratings and comments
+X Setup proper security for ratings and comments (based on tweaked rateable script)
 - Setup proper security for speaker functions (view my topics, edit my topics, upload files, etc.)
 X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
 X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
@@ -72,7 +72,10 @@ Bugs:
 
 - When I unregister an attendee that was added during in BootStrap, the taglib breaks w/ a NPE.
 
+Plugin mods:
+
 - Need to fix bug in commentable plugin (local fix only at this point)
+- I've tweaked ratings.js in the rateable plugin
 
 Other Info:
 
