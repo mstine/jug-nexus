@@ -2,13 +2,13 @@ JUG Nexus Features
 
 First Release:
 
-X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
 - Add facebook link (icon) to user pages
 - Make it possible to show/hide user information (e.g. email, website, etc.)
 - Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
 - Send email notifications to registered users (upcoming events, etc.)
 - Setup proper security for ratings and comments
 - Setup proper security for speaker functions (view my topics, edit my topics, upload files, etc.)
+X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
 X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
 X Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
 X Add search capabilities...search events, speakers, topics, etc.
@@ -41,6 +41,7 @@ X Users should be able to upload a mug shot for their profile, and for any event
 
 
 
+
 Future Release:
 
 - Add a way to generate Google Maps directions from any location	
@@ -65,6 +66,7 @@ X Xwiki Render
 X Quartz
 X Avatar
 X yui
+X tinyurl
 
 Bugs:
 
