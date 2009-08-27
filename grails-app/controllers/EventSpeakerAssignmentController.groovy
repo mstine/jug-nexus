@@ -1,9 +1,10 @@
+import EventSpeakerAssignment
 import com.lucastex.grails.fileuploader.UFile
+import org.springframework.dao.DataIntegrityViolationException
 
 class EventSpeakerAssignmentController {
 
-  def twitterService
-  def tinyurlService
+  def twitterEventService
 
   def index = { redirect(action: list, params: params) }
 
@@ -72,20 +73,7 @@ class EventSpeakerAssignmentController {
       if (!eventSpeakerAssignmentInstance.hasErrors() && eventSpeakerAssignmentInstance.save()) {
         flash.message = "EventSpeakerAssignment ${params.id} updated"
 
-        def link = createLink(controller: "eventSpeakerAssignment", action: "show", id: eventSpeakerAssignmentInstance.id, absolute: true)
-        def tinyLink = tinyurlService.tiny(link)
-
-        def prefix = "Updated "
-
-        if (eventSpeakerAssignmentInstance.lightningTalk) {
-          prefix += "Lightning Talk"
-        } else {
-          prefix += "Topic"
-        }
-        prefix += " by ${eventSpeakerAssignmentInstance.user.firstName} ${eventSpeakerAssignmentInstance.user.lastName}"
-
-        twitterService.setStatus("${prefix}: ${eventSpeakerAssignmentInstance.topic} ${tinyLink}", [username: grailsApplication.config.twitter.username,
-                password: grailsApplication.config.twitter.password])
+        twitterEventService.tweetUpdatedTopic(eventSpeakerAssignmentInstance)
 
         redirect(action: show, id: eventSpeakerAssignmentInstance.id)
       }
@@ -111,20 +99,7 @@ class EventSpeakerAssignmentController {
     if (eventSpeakerAssignmentInstance.save()) {
       flash.message = "EventSpeakerAssignment ${eventSpeakerAssignmentInstance.id} created"
 
-      def link = createLink(controller: "eventSpeakerAssignment", action: "show", id: eventSpeakerAssignmentInstance.id, absolute: true)
-      def tinyLink = tinyurlService.tiny(link)
-
-      def prefix = "New "
-
-      if (eventSpeakerAssignmentInstance.lightningTalk) {
-        prefix += "Lightning Talk"
-      } else {
-        prefix += "Topic"
-      }
-      prefix += " by ${eventSpeakerAssignmentInstance.user.firstName} ${eventSpeakerAssignmentInstance.user.lastName}"
-
-      twitterService.setStatus("${prefix}: ${eventSpeakerAssignmentInstance.topic} ${tinyLink}", [username: grailsApplication.config.twitter.username,
-              password: grailsApplication.config.twitter.password])
+      twitterEventService.tweetNewTopic(eventSpeakerAssignmentInstance)
 
       redirect(action: show, id: eventSpeakerAssignmentInstance.id)
     }
@@ -140,17 +115,7 @@ class EventSpeakerAssignmentController {
     eventSpeakerAssignment.addToFiles(uploadedFile)
     eventSpeakerAssignment.save()
 
-    def prefix = "New File Uploaded for ${eventSpeakerAssignment.user.firstName} ${eventSpeakerAssignment.user.lastName}'s "
-    if (eventSpeakerAssignment.lightningTalk) {
-      prefix += "Lightning Talk"
-    } else {
-      prefix += "Topic"
-    }
-
-    def link = createLink(controller: "eventSpeakerAssignment", action: "show", id: eventSpeakerAssignment.id, absolute: true)
-    def tinyLink = tinyurlService.tiny(link)
-    twitterService.setStatus("${prefix}: ${eventSpeakerAssignment.topic} ${tinyLink}", [username: grailsApplication.config.twitter.username,
-            password: grailsApplication.config.twitter.password])
+    twitterEventService.tweetNewFileForTopic(eventSpeakerAssignment)
 
     redirect action: "show", id: params.id
   }

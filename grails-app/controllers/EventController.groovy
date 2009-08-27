@@ -1,7 +1,6 @@
 class EventController {
 
-  def twitterService
-  def tinyurlService
+  def twitterEventService
 
   def index = { redirect(action: list, params: params) }
 
@@ -70,10 +69,7 @@ class EventController {
       if (!eventInstance.hasErrors() && eventInstance.save()) {
         flash.message = "Event ${params.id} updated"
 
-        def link = createLink(controller: "event", action: "show", id: eventInstance.id, absolute: true)
-        def tinyLink = tinyurlService.tiny(link)
-        twitterService.setStatus("Updated Event Posted for ${formatDate(format:'MM/dd/yyyy', date:eventInstance.startTime)}: ${eventInstance.title} ${tinyLink}", [username: grailsApplication.config.twitter.username,
-                password: grailsApplication.config.twitter.password])
+        twitterEventService.tweetUpdatedEvent(eventInstance)
 
         redirect(action: show, id: eventInstance.id)
       }
@@ -98,10 +94,7 @@ class EventController {
     if (eventInstance.save()) {
       flash.message = "Event ${eventInstance.id} created"
 
-      def link = createLink(controller: "event", action: "show", id: eventInstance.id, absolute: true)
-      def tinyLink = tinyurlService.tiny(link)
-      twitterService.setStatus("New Event Posted for ${formatDate(format:'MM/dd/yyyy', date:eventInstance.startTime)}: ${eventInstance.title} ${tinyLink}", [username: grailsApplication.config.twitter.username,
-              password: grailsApplication.config.twitter.password])
+      twitterEventService.tweetNewEvent(eventInstance)
 
       redirect(action: show, id: eventInstance.id)
     }
