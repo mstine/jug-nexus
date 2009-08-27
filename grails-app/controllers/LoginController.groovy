@@ -93,7 +93,7 @@ class LoginController {
 		render """
 		<script type='text/javascript'>
 		(function() {
-			loginForm();
+			window.location = '${createLink(controller: 'login')}';
 		})();
 		</script>
 		"""
