@@ -8,9 +8,9 @@ class TwitterJob {
     def timeout = 300000 // execute job every 5 minutes
 
     def execute() {
-        log.fatal "Retrieving twitter timeline..."
+        log.debug "Retrieving twitter timeline..."
         twitterCacheService.cachedTweets = twitterService.getUserTimeline([username:grailsApplication.config.twitter.username,
                       password:grailsApplication.config.twitter.password])
-        log.fatal "Twitter timeline updated!"
+        log.debug "Twitter timeline updated!"
     }
 }
