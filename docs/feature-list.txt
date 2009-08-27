@@ -2,7 +2,7 @@ JUG Nexus Features
 
 First Release:
 
-- "Tweet" notable events on the website (event added/updated, topic added/updated, files added, members joined, etc.)
+X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
 - Add facebook link (icon) to user pages
 - Make it possible to show/hide user information (e.g. email, website, etc.)
 - Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
@@ -53,7 +53,7 @@ Possible Plugins:
 
 X Commentable
 X Rateable
-- Grails File Uploader
+X Grails File Uploader
 X Spring Security Plugin (Acegi)
 X Twitter Plugin
 - Recaptcha Plugin for registration
@@ -74,6 +74,6 @@ Bugs:
 
 Other Info:
 
-API Key for localhost development: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w
+Google Maps API Key for localhost development: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w
 memphisjug.org production: ABQIAAAACh6QoGMH5jXrbrlXKcLtrxRCCl3Cu310wKizRJBzKoUV2z9GZhTe65FZcjAmXyZM9K4XUwQwVRKlGA
 
