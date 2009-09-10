@@ -18,7 +18,9 @@
       <thead>
       <th>&nbsp;</th>
       <th style="font-size: 1.5em; vertical-align: middle">Name</th>
-      <th style="font-size: 1.5em; vertical-align: middle">Attended?</th>
+      <g:ifAllGranted role="ROLE_ADMIN">
+        <th style="font-size: 1.5em; vertical-align: middle">Attended?</th>
+      </g:ifAllGranted>
       </thead>
       <tbody>
       <g:each in="${event.registrations}" status="i" var="eventAttendeeRegistrationInstance">
@@ -28,16 +30,18 @@
 
           <td style="font-size: 1.5em; vertical-align: middle">${eventAttendeeRegistrationInstance.user.firstName} ${eventAttendeeRegistrationInstance.user.lastName}</td>
 
-          <td style="font-size: 1.5em; vertical-align: middle">
-            <div id="registrationButton${eventAttendeeRegistrationInstance.id}">
-              <g:if test="${eventAttendeeRegistrationInstance.attended}">
-                <img src="${resource(dir:'images', file: 'ok.png')}"/>
-              </g:if>
-              <g:else>
-                <input type="button" value="I'm here!" onclick="new Ajax.Updater('registrationButton${eventAttendeeRegistrationInstance.id}', '<g:createLink action="setAttendeeIsHere" id="${eventAttendeeRegistrationInstance.id}" />');"/>
-              </g:else>
-            </div>
-          </td>
+          <g:ifAllGranted role="ROLE_ADMIN">
+            <td style="font-size: 1.5em; vertical-align: middle">
+              <div id="registrationButton${eventAttendeeRegistrationInstance.id}">
+                <g:if test="${eventAttendeeRegistrationInstance.attended}">
+                  <img src="${resource(dir: 'images', file: 'ok.png')}"/>
+                </g:if>
+                <g:else>
+                  <input type="button" value="I'm here!" onclick="new Ajax.Updater('registrationButton${eventAttendeeRegistrationInstance.id}', '<g:createLink action="setAttendeeIsHere" id="${eventAttendeeRegistrationInstance.id}" />');"/>
+                </g:else>
+              </div>
+            </td>
+          </g:ifAllGranted>
 
         </tr>
       </g:each>
