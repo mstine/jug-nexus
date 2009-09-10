@@ -143,11 +143,11 @@ img.right {
     vertical-align: middle;
 }
 
-.registration a {
+#registration a {
     text-decoration: none;
 }
 
-.registration img {
+#registration img {
     border: 0;
     vertical-align: middle;
 }
