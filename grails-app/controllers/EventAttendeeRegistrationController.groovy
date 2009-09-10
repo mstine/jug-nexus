@@ -20,7 +20,7 @@ class EventAttendeeRegistrationController {
     def event = Event.get(params.eventId)
 
     event.addToRegistrations(new EventAttendeeRegistration(user: user)).save()
-    redirect(controller: 'event', action: 'show', id: event.id)
+    render registerForEvent(event: event)
   }
 
   def unregisterAttendee = {
@@ -28,7 +28,9 @@ class EventAttendeeRegistrationController {
     def event = Event.get(params.eventId)
 
     def registration = EventAttendeeRegistration.findByEventAndUser(event, user)
+    user.removeFromEventsAttending(registration)
+    event.removeFromRegistrations(registration)
     registration.delete()
-    redirect(controller: 'event', action: 'show', id: event.id)
+    render registerForEvent(event: event)
   }
 }

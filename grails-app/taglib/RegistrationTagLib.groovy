@@ -3,7 +3,6 @@ class RegistrationTagLib {
   def authenticateService
 
   def registerForEvent = {attrs, body ->
-    out << """<div class="registration">"""
 
     def event = attrs.event
 
@@ -18,8 +17,7 @@ class RegistrationTagLib {
           if (registered) {
             outputUnregisterLink(out, user, event)
           } else {
-            out << """<h2><a href="${createLink(controller: "eventAttendeeRegistration", action: "registerAttendee", params: [userId: user.id, eventId: event.id])}">"""
-            out << """<img src="${resource(dir: 'images', file: 'ok.png')}"/> Register Me!</a></h2>"""
+            outputRegisterLink(out, user, event)
           }
         } else {
           out << """<h2><a href="${createLink(controller: "login")}">Login</a> to register for this event!</h2>"""
@@ -33,12 +31,19 @@ class RegistrationTagLib {
       out << """<h2 class="eventClosed">Registration for this event has closed.</h2>"""
     }
 
-    out << """</div>"""
+  }
+
+  private def outputRegisterLink(out, user, event) {
+    out << """<h2>${remoteLink(update: "registration", controller: "eventAttendeeRegistration", action: "registerAttendee", params: [userId: user.id, eventId: event.id]) {
+      """<img src="${resource(dir: 'images', file: 'ok.png')}"/> Register Me!"""
+    }}</h2>"""
   }
 
   private def outputUnregisterLink(out, user, event) {
-    out << """<h2><a href="${createLink(controller: "eventAttendeeRegistration", action: "unregisterAttendee", params: [userId: user.id, eventId: event.id])}">"""
-    out << """<img src="${resource(dir: 'images', file: 'cancel.png')}"/> Unregister Me!</a></h2>"""
+    out << """<h2>${remoteLink(update: "registration", controller: "eventAttendeeRegistration", action: "unregisterAttendee", params: [userId: user.id, eventId: event.id]) {
+      """<img src="${resource(dir: 'images', file: 'cancel.png')}"/> Unregister Me!"""
+    }}</h2>"""
+    
   }
 
 

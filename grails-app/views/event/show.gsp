@@ -36,7 +36,9 @@
           <g:formatDate format="h:mm a" date="${eventInstance.startTime}"/>-<g:formatDate format="h:mm a" date="${eventInstance.endTime}"/><br/>
           ${fieldValue(bean: eventInstance, field: 'location')}</h2>
       </div>
-      <g:registerForEvent event="${eventInstance}"/>
+      <div id="registration">
+        <g:registerForEvent event="${eventInstance}"/>
+      </div>
       <h2><g:link class="list" controller="eventAttendeeRegistration" action="listForEvent" id="${eventInstance.id}">Who's Coming?</g:link></h2>
       <g:ifAllGranted role="ROLE_ADMIN">
         <div class="eventAdminDetails">
