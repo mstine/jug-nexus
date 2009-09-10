@@ -16,6 +16,7 @@ class User {
   String location
   String company
   String email
+  boolean showEmail = false
   String bio
   String website
   String blogFeed

@@ -4,7 +4,6 @@
   </div>
 
   <div class="entry">
-
     <div class="userBio">
       <avatar:gravatar email="${person.email}" cssClass="showUserAvatar"/><g:xwikiRender>${fieldValue(bean: person, field: 'bio')}</g:xwikiRender>
     </div>
@@ -12,7 +11,7 @@
     <ul class="userInfo">
       <g:if test="${person.location}"><li><strong>Location:</strong> ${fieldValue(bean: person, field: 'location')}</li></g:if>
       <g:if test="${person.company}"><li><strong>Company:</strong> ${fieldValue(bean: person, field: 'company')}</li></g:if>
-      <g:if test="${person.email}"><li><strong>Email:</strong> <a href="mailto:${fieldValue(bean: person, field: 'email')}">${fieldValue(bean: person, field: 'email')}</a></li></g:if>
+      <g:if test="${person.showEmail}"><li><strong>Email:</strong> <a href="mailto:${fieldValue(bean: person, field: 'email')}">${fieldValue(bean: person, field: 'email')}</a></li></g:if>
       <g:if test="${person.website}"><li><strong>Website/Blog:</strong> <a href="${fieldValue(bean: person, field: 'website')}">${fieldValue(bean: person, field: 'website')}</a></li></g:if>
     </ul>
 

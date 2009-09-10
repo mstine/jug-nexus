@@ -110,6 +110,7 @@ class RegisterController {
         person.location = params.location
         person.company = params.company
         person.email = params.email
+        person.showEmail = (params.showEmail != null)
         person.bio = params.bio
 		person.website = params.website
         person.blogFeed = params.blogFeed

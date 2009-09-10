@@ -86,6 +86,15 @@
 
         <tr class="prop">
           <td valign="top" class="name">
+            <label for="showEmail">Show Email:</label>
+          </td>
+          <td valign="top" class="value ${hasErrors(bean: person, field: 'showEmail', 'errors')}">
+            <g:checkBox name="showEmail" value="${person?.showEmail}"></g:checkBox>
+          </td>
+        </tr>
+
+        <tr class="prop">
+          <td valign="top" class="name">
             <label for="bio">Bio:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: person, field: 'bio', 'errors')}">
