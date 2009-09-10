@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>Welcome to Grails</title>
+      <g:javascript library="prototype"/>
+      
 		<meta name="layout" content="main" />
     </head>
     <body>
@@ -17,6 +19,9 @@
             <div class="entry">
               <h2>
           <g:formatDate format="EEEE, MMMM dd, yyyy" date="${event.startTime}"/></h2>
+              <div id="registration">
+        <g:registerForEvent event="${event}"/>
+      </div>
               ${event.description}</div>
             <div class="meta">
               <p class="credit">Posted on October 14, 2008</p>
