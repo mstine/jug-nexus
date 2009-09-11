@@ -24,7 +24,7 @@
       </div>
               ${event.description}</div>
             <div class="meta">
-              <p class="credit">Posted on October 14, 2008</p>
+              <p class="credit">Posted on <g:formatDate format="MMMM dd, yyyy" date="${event.dateCreated}"/></p>
               <p class="links"><g:link controller="event" action="show" id="${event.id}" class="more">Read more</g:link></p>
             </div>
           </div>
