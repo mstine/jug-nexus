@@ -4,7 +4,7 @@ First Release:
 
 - Send email notifications to registered users (upcoming events, etc.)
 X Setup proper security for speaker functions (view my topics, edit my topics, upload files, etc.)
-- Clean up page titles
+X Clean up page titles
 - Add date posted to event to fix the front page
 X Who's coming is currently wide open..properly secure
 X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
