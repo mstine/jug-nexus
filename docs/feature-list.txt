@@ -2,10 +2,9 @@ JUG Nexus Features
 
 First Release:
 
-- Send email notifications to registered users (upcoming events, etc.)
 X Setup proper security for speaker functions (view my topics, edit my topics, upload files, etc.)
 X Clean up page titles
-- Add date posted to event to fix the front page
+X Add date posted to event to fix the front page
 X Who's coming is currently wide open..properly secure
 X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
 X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
@@ -48,6 +47,7 @@ Future Release:
 - Update the star images from Rateable to look better on black bg
 - Develop an iphone friendly web interface
 - Add facebook link (icon) to user pages
+- Send email notifications to registered users (upcoming events, etc.)
 
 
 Possible Plugins:
