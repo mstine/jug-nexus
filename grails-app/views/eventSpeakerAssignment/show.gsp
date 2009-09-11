@@ -34,56 +34,83 @@
 
   </div>
 
-  <div class="slides">
-    <h2>Files available:</h2>
-    <table>
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Date Uploaded</th>
-        <th>Downloads</th>
-      </tr>
-      </thead>
-      <tbody>
-      <g:each in="${eventSpeakerAssignmentInstance.files}" var="file">
+  <g:if test="${eventSpeakerAssignmentInstance.files}">
+    <div class="slides">
+      <h2>Files available:</h2>
+      <table>
+        <thead>
         <tr>
-          <td><fileuploader:download id="${file.id}" errorAction="show" errorController="eventSpeakerAssignment">${file.name}</fileuploader:download></td>
-          <td><fileuploader:prettysize size="${file.size}"/></td>
-          <td><g:formatDate format="MM/dd/yyyy" date="${file.dateUploaded}"/></td>
-          <td>${file.downloads}</td>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Date Uploaded</th>
+          <th>Downloads</th>
         </tr>
-      </g:each>
-      </tbody>
-    </table>
-  </div>
-
-  <g:ifAllGranted role="ROLE_ADMIN">
-    <div class="slideUpload">
-      <h2>Add a file:</h2>
-      <fileuploader:form upload="slides"
-              successAction="addFile"
-              successController="eventSpeakerAssignment"
-              successId="${eventSpeakerAssignmentInstance.id}"
-              errorAction="show"
-              errorController="eventSpeakerAssignment"
-              errorId="${eventSpeakerAssignmentInstance.id}"/>
+        </thead>
+        <tbody>
+        <g:each in="${eventSpeakerAssignmentInstance.files}" var="file">
+          <tr>
+            <td><fileuploader:download id="${file.id}" errorAction="show" errorController="eventSpeakerAssignment">${file.name}</fileuploader:download></td>
+            <td><fileuploader:prettysize size="${file.size}"/></td>
+            <td><g:formatDate format="MM/dd/yyyy" date="${file.dateUploaded}"/></td>
+            <td>${file.downloads}</td>
+          </tr>
+        </g:each>
+        </tbody>
+      </table>
     </div>
-  </g:ifAllGranted>
+  </g:if>
+
+  <g:ifAnyGranted role="ROLE_ADMIN,ROLE_SPEAKER">
+    <g:if test="${eventSpeakerAssignmentInstance.user == authenticatedUser}">
+      <div class="slideUpload">
+        <h2>Add a file:</h2>
+        <fileuploader:form upload="slides"
+                successAction="addFile"
+                successController="eventSpeakerAssignment"
+                successId="${eventSpeakerAssignmentInstance.id}"
+                errorAction="show"
+                errorController="eventSpeakerAssignment"
+                errorId="${eventSpeakerAssignmentInstance.id}"/>
+      </div>
+    </g:if>
+    <g:else>
+      <g:ifAllGranted role="ROLE_ADMIN">
+        <div class="slideUpload">
+          <h2>Add a file:</h2>
+          <fileuploader:form upload="slides"
+                  successAction="addFile"
+                  successController="eventSpeakerAssignment"
+                  successId="${eventSpeakerAssignmentInstance.id}"
+                  errorAction="show"
+                  errorController="eventSpeakerAssignment"
+                  errorId="${eventSpeakerAssignmentInstance.id}"/>
+        </div>
+      </g:ifAllGranted>
+    </g:else>
+  </g:ifAnyGranted>
 
   <div class="comments">
     <h2>Comments:</h2>
     <comments:render bean="${eventSpeakerAssignmentInstance}"/>
   </div>
-  <g:ifAllGranted role="ROLE_ADMIN">
+  <g:ifAnyGranted role="ROLE_ADMIN,ROLE_SPEAKER">
     <div class="buttons">
       <g:form>
         <input type="hidden" name="id" value="${eventSpeakerAssignmentInstance?.id}"/>
-        <span class="button"><g:actionSubmit class="edit" value="Edit"/></span>
-        <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete"/></span>
+        <g:if test="${eventSpeakerAssignmentInstance.user == authenticatedUser}">
+          <span class="button"><g:actionSubmit class="edit" value="Edit"/></span>
+        </g:if>
+        <g:else>
+          <g:ifAllGranted role="ROLE_ADMIN">
+            <span class="button"><g:actionSubmit class="edit" value="Edit"/></span>
+          </g:ifAllGranted>
+        </g:else>
+        <g:ifAllGranted role="ROLE_ADMIN">
+          <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete"/></span>
+        </g:ifAllGranted>
       </g:form>
     </div>
-  </g:ifAllGranted>
+  </g:ifAnyGranted>
 </div>
 </body>
 </html>

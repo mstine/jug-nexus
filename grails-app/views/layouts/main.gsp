@@ -90,6 +90,14 @@ Released   : 20081016
                 </ul>
               </li>
             </g:ifAllGranted>
+            <g:ifAllGranted role="ROLE_SPEAKER">
+              <li>
+                <h2>Speaker Navigation</h2>
+                <ul>
+                  <li><g:link controller="eventSpeakerAssignment" action="listForSpeaker" id="${loggedInUserInfo(field:'id')}">List My Topics</g:link></li>
+                </ul>
+              </li>
+            </g:ifAllGranted>
             <li>
               <h2>Twitter</h2>
               <g:timeline/>
