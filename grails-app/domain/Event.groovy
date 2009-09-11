@@ -14,6 +14,8 @@ class Event implements Commentable, Rateable {
   int maxAttendees
   boolean registrationOpen = true
   List registrations
+  Date dateCreated
+  Date lastUpdated
 
   static mapping = {
     sort startTime: "desc"
