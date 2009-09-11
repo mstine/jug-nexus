@@ -39,7 +39,11 @@ security {
     /role/**=ROLE_ADMIN
     /sponsor/**=ROLE_ADMIN
     /sponsorgroup/**=ROLE_ADMIN
-    /user/**=ROLE_ADMIN
+    /user/create=ROLE_ADMIN
+    /user/edit/**=ROLE_ADMIN
+    /user/save/**=ROLE_ADMIN
+    /user/update/**=ROLE_ADMIN
+    /user/delete/**=ROLE_ADMIN
     /register/edit/**=ROLE_ADMIN,ROLE_SPEAKER,ROLE_MEMBER
     /register/update/**=ROLE_ADMIN,ROLE_SPEAKER,ROLE_MEMBER
   """
