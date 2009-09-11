@@ -2,18 +2,23 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="layout" content="main"/>
-  <title>EventAttendeeRegistration List</title>
+  <title>Event Registrations for ${event.title}</title>
   <g:javascript library="prototype"/>
 </head>
 <body>
+
 <div class="post">
   <div class="title">
     <h2>Event Registrations for ${event.title}</h2>
   </div>
+
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
   <div class="entry">
+    <div class="secondaryMenu">
+      <g:link controller="event" action="show" id="${event.id}">Back to Event</g:link>
+    </div>
     <table>
       <thead>
       <th>&nbsp;</th>

@@ -1,6 +1,6 @@
 <head>
   <meta name="layout" content="main"/>
-  <title>Edit Profile</title>
+  <title>Edit My Profile</title>
 </head>
 
 <body>

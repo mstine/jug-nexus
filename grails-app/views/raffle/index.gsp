@@ -10,7 +10,7 @@
 <html>
 <head>
   <meta name="layout" content="main"/>
-  <title>Raffle</title>
+  <title>Raffle for <g:formatDate date="${event?.startTime}" format="MM-dd-yyyy"/></title>
   <style type="text/css" media="screen">
   .person {
     width: 300px;
@@ -122,7 +122,7 @@
   </script>
 </head>
 <body>
-<h1>Prize drawing for <g:formatDate date="${event?.startTime}" format="MM-dd-yyyy"/></h1>
+<h1>Raffle for <g:formatDate date="${event?.startTime}" format="MM-dd-yyyy"/></h1>
 <div class="secondaryMenu">
   <g:link controller="event" action="show" id="${event.id}">Back to Event</g:link>
 </div>

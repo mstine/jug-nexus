@@ -1,6 +1,6 @@
 <head>
   <meta name="layout" content="main"/>
-  <title>User List</title>
+  <title>Users</title>
 </head>
 
 <body>

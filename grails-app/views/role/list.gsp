@@ -1,6 +1,6 @@
 <head>
   <meta name="layout" content="main"/>
-  <title>Role List</title>
+  <title>Roles</title>
 </head>
 
 <body>

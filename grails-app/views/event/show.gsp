@@ -2,7 +2,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="layout" content="main"/>
-  <title>Show Event</title>
+  <title>${fieldValue(bean: eventInstance, field: 'title')}</title>
   <g:javascript library="prototype"/>
   <gmap:resources location="${eventInstance.location}"/>
   <rateable:resources/>

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Welcome to Grails</title>
+        <title>Welcome!</title>
       <g:javascript library="prototype"/>
       
 		<meta name="layout" content="main" />
