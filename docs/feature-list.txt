@@ -2,12 +2,11 @@ JUG Nexus Features
 
 First Release:
 
-- Add facebook link (icon) to user pages
-- Make it possible to show/hide user information (e.g. email, website, etc.)
-- Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
 - Send email notifications to registered users (upcoming events, etc.)
-X Setup proper security for ratings and comments (based on tweaked rateable script)
-- Setup proper security for speaker functions (view my topics, edit my topics, upload files, etc.)
+X Setup proper security for speaker functions (view my topics, edit my topics, upload files, etc.)
+- Clean up page titles
+- Add date posted to event to fix the front page
+X Who's coming is currently wide open..properly secure
 X "Tweet" notable events on the website (event added/updated, topic added/updated, files added)
 X Account registration should be moderated (i.e. to ensure that folks are actually likely to participate...similar to Google Groups, prevent spam)
 X Add commenting, rating ability to speaker topics (EventSpeakerAssignment)
@@ -27,10 +26,13 @@ X Fix the HORRIBLE styling on the login screen
 X Link to speaker twitter feed on event page
 X Link to Twitter feed for news...aggregate on the front page
 X Make it possible to add sponsors and sponsor categories along with their logo and link
+X Make it possible to show/hide user information (e.g. email, website, etc.)
+X Make registration an Ajax call so that I can have it in multiple locations (event show, event list, main page)
 X Need a cool "sign-in" interface that can be used in lieu of printing the sign-in sheet each meeting
 X Registered members should be able to register for meetings
 X Setup a FaceBook group (http://www.facebook.com/group.php?gid=143824172597&ref=mf)	
 X Setup a Twitter account (http://twitter.com/memphisjug)
+X Setup proper security for ratings and comments (based on tweaked rateable script)
 X Should be able to set a max registration for an event, whether registration is open or closed, etc.
 X Use Xwiki rendering throughout for user editable content
 X User profile includes full name, username, password, location, company, email, website, blog feed, twitter feed, facebook (?), etc.
@@ -39,15 +41,13 @@ X Users should be able to register for accounts
 X Users should be able to upload a mug shot for their profile, and for any events at which they are speaking (Currently using Gravatar for this)
 
 
-
-
-
 Future Release:
 
 - Add a way to generate Google Maps directions from any location	
 - Possibly setup the FootPrint certificate thing
 - Update the star images from Rateable to look better on black bg
 - Develop an iphone friendly web interface
+- Add facebook link (icon) to user pages
 
 
 Possible Plugins:
@@ -68,14 +68,17 @@ X Avatar
 X yui
 X tinyurl
 
+
 Bugs:
 
 - When I unregister an attendee that was added during in BootStrap, the taglib breaks w/ a NPE.
+
 
 Plugin mods:
 
 - Need to fix bug in commentable plugin (local fix only at this point)
 - I've tweaked ratings.js in the rateable plugin
+
 
 Other Info:
 
