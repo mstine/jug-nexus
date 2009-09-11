@@ -20,5 +20,27 @@ security {
     PATTERN_TYPE_APACHE_ANT
 
     /commentable/add**=IS_AUTHENTICATED_REMEMBERED
+    /eventattendeeregistration/setattendeeishere/**=ROLE_ADMIN
+    /eventattendeeregistration/registerattendee/**=ROLE_MEMBER,ROLE_SPEAKER,ROLE_ADMIN
+    /eventattendeeregistration/unregisterattendee/**=ROLE_MEMBER,ROLE_SPEAKER,ROLE_ADMIN
+    /event/create=ROLE_ADMIN
+    /event/edit/**=ROLE_ADMIN
+    /event/save/**=ROLE_ADMIN
+    /event/update/**=ROLE_ADMIN
+    /event/delete/**=ROLE_ADMIN
+    /eventspeakerassignment/create=ROLE_ADMIN
+    /eventspeakerassignment/edit/**=ROLE_ADMIN,ROLE_SPEAKER
+    /eventspeakerassignment/save/**=ROLE_ADMIN
+    /eventspeakerassignment/update/**=ROLE_ADMIN,ROLE_SPEAKER
+    /eventspeakerassignment/delete/**=ROLE_ADMIN
+    /eventspeakerassignment/addfile/**=ROLE_ADMIN,ROLE_SPEAKER
+    /eventspeakerassignment/listforevent/**=ROLE_ADMIN,ROLE_SPEAKER
+    /raffle/**=ROLE_ADMIN
+    /role/**=ROLE_ADMIN
+    /sponsor/**=ROLE_ADMIN
+    /sponsorgroup/**=ROLE_ADMIN
+    /user/**=ROLE_ADMIN
+    /register/edit/**=ROLE_ADMIN,ROLE_SPEAKER,ROLE_MEMBER
+    /register/update/**=ROLE_ADMIN,ROLE_SPEAKER,ROLE_MEMBER
   """
 }
