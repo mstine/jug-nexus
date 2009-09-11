@@ -25,7 +25,7 @@ Since the first Spring Experience in 2005, Keith, with Jay Zimmerman of NoFluffJ
 
 Keith is also the principal architect behind SpringSource’s state-of-the-art training curriculum, which has provided practical training on Spring to over 3000 students worldwide.
 
-Over his career, Keith, an experienced enterprise software developer and mentor, has built business applications for customers spanning a diverse set of industries including banking, network management, information assurance, education, and retail. He is particularly adept at translating business requirements into technical solutions. """).addToAuthorities(memberRole).addToAuthorities(adminRole).addToAuthorities(speakerRole).save()
+Over his career, Keith, an experienced enterprise software developer and mentor, has built business applications for customers spanning a diverse set of industries including banking, network management, information assurance, education, and retail. He is particularly adept at translating business requirements into technical solutions. """).addToAuthorities(speakerRole).save()
 
     new User(username: "jneely", passwd: authenticateService.encodePassword("password"),
             firstName: "Joel", lastName: "Neely",
