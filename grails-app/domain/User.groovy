@@ -1,3 +1,7 @@
+import EventAttendeeRegistration
+import EventSpeakerAssignment
+import Role
+
 /**
  * User domain class.
  */
@@ -6,10 +10,14 @@ class User {
   static hasMany = [authorities: Role, eventsAttending: EventAttendeeRegistration, eventsSpeaking: EventSpeakerAssignment]
   static belongsTo = Role
 
-  static searchable = true
+  static searchable = {
+    mapping {
+      spellCheck "include"
+    }
+  }
 
   String username
-  /** MD5 Password   */
+  /** MD5 Password    */
   String passwd
   String firstName
   String lastName
@@ -25,7 +33,7 @@ class User {
   boolean speakerOnly = false
   String whyIWantToJoin
 
-  /** plain password to create a MD5 password   */
+  /** plain password to create a MD5 password    */
   String pass = '[secret]'
 
   static constraints = {

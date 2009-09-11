@@ -1,3 +1,5 @@
+import EventAttendeeRegistration
+import EventSpeakerAssignment
 import org.grails.comments.Commentable
 import org.grails.rateable.Rateable
 
@@ -22,7 +24,11 @@ class Event implements Commentable, Rateable {
   }
 
 
-  static searchable = true
+  static searchable = {
+    mapping {
+      spellCheck "include"
+    }
+  }
 
   static hasMany = [registrations: EventAttendeeRegistration, speakers: EventSpeakerAssignment]
 

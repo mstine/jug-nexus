@@ -1,6 +1,8 @@
+import Event
+import User
+import com.lucastex.grails.fileuploader.UFile
 import org.grails.comments.Commentable
 import org.grails.rateable.Rateable
-import com.lucastex.grails.fileuploader.UFile
 
 class EventSpeakerAssignment implements Commentable, Rateable {
 
@@ -10,19 +12,23 @@ class EventSpeakerAssignment implements Commentable, Rateable {
   String topicAbstract
   boolean lightningTalk = false
 
-  static hasMany = [files:UFile]
+  static hasMany = [files: UFile]
 
-  static searchable = true
+  static searchable = {
+    mapping {
+      spellCheck "include"
+    }
+  }
 
   static constraints = {
-    event(nullable:false)
-    user(nullable:false)
-    topic(blank:false)
-    topicAbstract(blank:false,maxSize:4000)
+    event(nullable: false)
+    user(nullable: false)
+    topic(blank: false)
+    topicAbstract(blank: false, maxSize: 4000)
     lightningTalk()
   }
 
   String toString() {
-    "${user.firstName} ${user.lastName}: ${topic}"
+    "${topic}"
   }
 }
