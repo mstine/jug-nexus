@@ -5,6 +5,7 @@ import org.springframework.dao.DataIntegrityViolationException
 class EventSpeakerAssignmentController {
 
   def twitterEventService
+  def authenticateService
 
   def index = { redirect(action: list, params: params) }
 
@@ -16,6 +17,11 @@ class EventSpeakerAssignmentController {
     [eventSpeakerAssignmentInstanceList: EventSpeakerAssignment.list(params), eventSpeakerAssignmentInstanceTotal: EventSpeakerAssignment.count()]
   }
 
+  def listForSpeaker = {
+    User user = User.get(params.id)
+    [eventSpeakerAssignmentInstanceList: EventSpeakerAssignment.findAllByUser(user), user: user]
+  }
+
   def show = {
     def eventSpeakerAssignmentInstance = EventSpeakerAssignment.get(params.id)
 
@@ -23,7 +29,7 @@ class EventSpeakerAssignmentController {
       flash.message = "EventSpeakerAssignment not found with id ${params.id}"
       redirect(action: list)
     }
-    else { return [eventSpeakerAssignmentInstance: eventSpeakerAssignmentInstance] }
+    else { return [eventSpeakerAssignmentInstance: eventSpeakerAssignmentInstance, authenticatedUser: authenticateService.userDomain()] }
   }
 
   def delete = {
@@ -95,8 +101,8 @@ class EventSpeakerAssignmentController {
 
   def save = {
     def eventSpeakerAssignmentInstance = new EventSpeakerAssignment(params)
-    eventSpeakerAssignmentInstance.merge()
-    if (eventSpeakerAssignmentInstance.save()) {
+
+    if (eventSpeakerAssignmentInstance.merge()) {
       flash.message = "EventSpeakerAssignment ${eventSpeakerAssignmentInstance.id} created"
 
       twitterEventService.tweetNewTopic(eventSpeakerAssignmentInstance)
