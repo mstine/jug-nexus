@@ -1,9 +1,43 @@
+import grails.util.Environment
+
 class BootStrap {
 
   def authenticateService
 
   def init = {servletContext ->
 
+    switch (Environment.current) {
+      case Environment.DEVELOPMENT:
+        bootstrapDevelopment()
+        break
+      case Environment.TEST:
+        bootstrapTest()
+        break
+      case Environment.PRODUCTION:
+        bootstrapProduction()
+        break
+    }
+
+  }
+
+  private def bootstrapTest() {}
+
+  private def bootstrapProduction() {
+
+    //Execute only if we haven't inserted roles before!
+    if (Role.count() == 0) {
+      def memberRole = new Role(authority: "ROLE_MEMBER", description: "Default role for registered users.").save()
+      def adminRole = new Role(authority: "ROLE_ADMIN", description: "Administrator role.").save()
+      def speakerRole = new Role(authority: "ROLE_SPEAKER", description: "Event speaker role.").save()
+
+      new User(username: "mstine", passwd: authenticateService.encodePassword("changeme"),
+              firstName: "Matt", lastName: "Stine",
+              email: "matt.stine@gmail.com", whyIWantToJoin: "I started the JUG!", moderated: true, bio: "Temporary Bio!").addToAuthorities(memberRole).addToAuthorities(adminRole).addToAuthorities(speakerRole).save()
+    }
+
+  }
+
+  private def bootstrapDevelopment() {
     def memberRole = new Role(authority: "ROLE_MEMBER", description: "Default role for registered users.").save()
     def adminRole = new Role(authority: "ROLE_ADMIN", description: "Administrator role.").save()
     def speakerRole = new Role(authority: "ROLE_SPEAKER", description: "Event speaker role.").save()
@@ -84,8 +118,8 @@ Over his career, Keith, an experienced enterprise software developer and mentor,
     event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("joeuser"))).save()
     event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("janeuser"))).save()
     event.addToRegistrations(new EventAttendeeRegistration(user: User.findByUsername("jeduser"))).save()
-
   }
+
   def destroy = {
   }
 } 
