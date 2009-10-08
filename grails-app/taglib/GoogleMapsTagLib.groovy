@@ -1,13 +1,12 @@
 class GoogleMapsTagLib {
 
   static namespace = "gmap"
-
-  def apiKey = "ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w";
+  def grailsApplication 
 
   def resources = {attrs, body ->
 
     out << """
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=${apiKey}&sensor=false"
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=${grailsApplication.config.gmap.apiKey}&sensor=false"
           type="text/javascript"></script>
 <script type="text/javascript">
 
