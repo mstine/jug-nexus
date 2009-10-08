@@ -25,7 +25,7 @@ Released   : 20081016
 <body>
 <div id="bg1">
   <div id="header">
-    <h1><g:link absolute="true">Memphis/Mid-South JUG</g:link></h1>
+    <h1><a href="http://www.memphisjug.org">Memphis/Mid-South JUG</a></h1>
     <g:isLoggedIn>
       <avatar:gravatar email="${loggedInUserInfo(field:'email')}"/>
       <h2>Welcome, <g:link controller="register"><g:loggedInUserInfo field="firstName"/></g:link>!<br/><span class="smallLink"><g:link controller="logout">Logout</g:link></span></h2>
@@ -78,6 +78,13 @@ Released   : 20081016
             <li>
               <h2>Meet Juggy Elvis</h2>
               <img src="${resource(dir: 'images', file: 'juggyElvis-medium.jpg')}"/>
+              <p><a href="https://jugs.dev.java.net/juggy/">Juggy</a>, originally born out of <a href="http://www.soujava.org.br/">SouJava</a>, the Java Users Society, a JUG in Brazil, is the mascot for
+              Java Users and Java User Groups around the world. It was donated to the community in 2005 under a
+              <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons License</a>, which allows others to use, distribute, and modify the image, so that
+              other JUG mascots can be based on Juggy.</p>
+              <p>Juggy Elvis is a concept originally conceived by Matt Stine, leader and founder of the
+              Memphis/Mid-South Java User Group, and brought to life by <a href="http://www.irinamcguire.com/design/logos/juggy_elvis.html">Irina McGuire</a>, a graphic designer and
+              web developer also from Memphis.</p>
             </li>
             <g:ifAllGranted role="ROLE_ADMIN">
               <li>
@@ -126,7 +133,7 @@ Released   : 20081016
                   <p style="text-align: center">
                     <a href="${sponsor.url}">
                       <g:if test="${sponsor.logo}">
-                        <img style="border: 0" src="${createLink(controller:'download',id:sponsor.logo.id)}"/>
+                        <img style="border: 0" src="${createLink(controller: 'download', id: sponsor.logo.id)}"/>
                       </g:if>
                       <g:else>
                         ${sponsor.name}
@@ -138,7 +145,9 @@ Released   : 20081016
             </li>
             <li>
               <h2>Powered By</h2>
-              <img src="${resource(dir: 'images', file: 'grails_logo.png')}"/>
+              <a href="http://www.grails.org">
+                <img style="border: 0" src="${resource(dir: 'images', file: 'grails_logo.png')}"/>
+              </a>
             </li>
           </ul>
         </div>
@@ -154,5 +163,15 @@ Released   : 20081016
   <p>&copy; 2009 Memphis/Mid-South Java User Group. Design by <a href="http://www.nodethirtythree.com/">nodeThirtyThree</a> + <a href="http://www.freewpthemes.net/">Free CSS Templates</a></p>
 </div>
 <!-- end #footer -->
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-10668042-1");
+    pageTracker._trackPageview();
+  } catch(err) {
+  }</script>
 </body>
 </html>
