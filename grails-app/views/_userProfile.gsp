@@ -5,7 +5,7 @@
 
   <div class="entry">
     <div class="userBio">
-      <avatar:gravatar email="${person.email}" cssClass="showUserAvatar"/><g:xwikiRender>${fieldValue(bean: person, field: 'bio')}</g:xwikiRender>
+      <avatar:gravatar email="${person.email}" cssClass="showUserAvatar"/><g:xwikiRender>${person.bio}</g:xwikiRender>
     </div>
 
     <ul class="userInfo">
