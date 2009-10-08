@@ -112,7 +112,8 @@ class RoleController {
 	def save = {
 
 		def authority = new Role()
-		authority.properties = params
+//		authority.properties = params
+      bindData(authority,params)
 		if (authority.save()) {
 			redirect action: show, id: authority.id
 		}
