@@ -20,12 +20,13 @@ class UserController {
   }
 
   def members = {
-    [users: User.findAllBySpeakerOnly(false)]
+    [users: User.findAllBySpeakerOnly(false,[sort:'lastName', order:'asc'])]
   }
 
   def speakers = {
     def users = User.createCriteria().list {
       isNotEmpty("eventsSpeaking")
+      order("lastName","asc")
     }
 
     [users: users]
@@ -109,7 +110,8 @@ class UserController {
 
     // if user want to change password. leave passwd field blank, passwd will not change.
     def oldPasswd = person.passwd
-    person.properties = params
+//    person.properties = params
+    bindData(person, params)
     if (params.passwd && params.passwd.length() > 0
             && params.repasswd && params.repasswd.length() > 0) {
       if (params.passwd == params.repasswd) {
@@ -145,7 +147,8 @@ class UserController {
   def save = {
 
     def person = new User()
-    person.properties = params
+//    person.properties = params
+    bindData(person, params)
     person.passwd = authenticateService.encodePassword(params.passwd)
     if (person.save()) {
       addRoles(person)
