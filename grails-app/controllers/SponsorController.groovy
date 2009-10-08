@@ -70,7 +70,8 @@ class SponsorController {
                     return
                 }
             }
-            sponsorInstance.properties = params
+//            sponsorInstance.properties = params
+          bindData(sponsorInstance, params)
             if(!sponsorInstance.hasErrors() && sponsorInstance.save()) {
                 flash.message = "Sponsor ${params.id} updated"
 
@@ -88,7 +89,8 @@ class SponsorController {
 
     def create = {
         def sponsorInstance = new Sponsor()
-        sponsorInstance.properties = params
+//        sponsorInstance.properties = params
+      bindData(sponsorInstance, params)
         return ['sponsorInstance':sponsorInstance]
     }
 
