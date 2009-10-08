@@ -50,14 +50,14 @@
           </ul>
         </div>
       </g:ifAllGranted>
-      <p>${fieldValue(bean: eventInstance, field: 'description')}</p>
+      <p><g:xwikiRender>${eventInstance.description}</g:xwikiRender></p>
       <h2>Speakers:</h2>
       <ul class="speakerList">
         <g:each var="speaker" in="${eventInstance.speakers}">
           <li>
             <h2><g:link controller="user" action="show" id="${speaker.user.id}">${speaker.user.firstName} ${speaker.user.lastName}</g:link> <g:if test="${speaker.user.twitterNickname}"><a href="http://twitter.com/${speaker.user.twitterNickname}"><img class="twitterIcon" src="${resource(dir: 'images', file: 'twitter.png')}" alt="Follow me on Twitter!" title="Follow me on Twitter!"/></a></g:if></h2>
             <div class="speakerBio"><avatar:gravatar email="${speaker.user.email}" cssClass="speakerAvatar"/><g:xwikiRender>${speaker.user.bio}</g:xwikiRender></div>
-            <h2><g:link controller="eventSpeakerAssignment" action="show" id="${speaker.id}">Topic: ${speaker.topic}</g:link> <g:if test="${speaker.lightningTalk}"><img class="lightningTalk" src="${resource(dir: 'images', file: 'lightning_48.png')}" alt="Lightning Talk" title="Lightning Talk"></g:if></h2>
+            <h2><g:link controller="eventSpeakerAssignment" action="show" id="${speaker.id}">Topic: ${speaker.topic}</g:link> <g:if test="${speaker.lightningTalk}"><img class="lightningTalk" src="${resource(dir: 'images', file: 'lightning_32.png')}" alt="Lightning Talk" title="Lightning Talk"></g:if></h2>
             <div class="topicAbstract"><g:xwikiRender>${speaker.topicAbstract}</g:xwikiRender></div>
           </li>
           <hr style="width:465px; margin-left: 15px; margin-bottom: 25px"/>
