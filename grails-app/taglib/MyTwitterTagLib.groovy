@@ -6,8 +6,11 @@ class MyTwitterTagLib {
 
     out << "<ul>"
 
-    twitterCacheService.cachedTweets.each {
-      out << "<li>${twitter.markup(text:it)}</li>"
+    //is there a more elegant way to just do the first 10 elements?
+    twitterCacheService.cachedTweets.eachWithIndex() { tweet, i ->
+      if (i < 10) {
+        out << "<li>${twitter.markup(text:tweet)}</li>"
+      }
     }
 
     out << "</ul>"
