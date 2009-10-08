@@ -70,7 +70,8 @@ class SponsorGroupController {
                     return
                 }
             }
-            sponsorGroupInstance.properties = params
+//            sponsorGroupInstance.properties = params
+          bindData(sponsorGroupInstance, params)
             if(!sponsorGroupInstance.hasErrors() && sponsorGroupInstance.save()) {
                 flash.message = "SponsorGroup ${params.id} updated"
 
@@ -88,7 +89,8 @@ class SponsorGroupController {
 
     def create = {
         def sponsorGroupInstance = new SponsorGroup()
-        sponsorGroupInstance.properties = params
+//        sponsorGroupInstance.properties = params
+      bindData(sponsorGroupInstance, params)
         return ['sponsorGroupInstance':sponsorGroupInstance]
     }
 
