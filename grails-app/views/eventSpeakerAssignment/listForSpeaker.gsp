@@ -15,7 +15,7 @@
 <g:each var="topic" in="${eventSpeakerAssignmentInstanceList}">
   <div class="post">
     <div class="title">
-      <h2><g:link controller="eventSpeakerAssignment" action="show" id="${topic.id}">${topic.topic}</g:link></h2>
+      <h2><g:link controller="eventSpeakerAssignment" action="show" id="${topic.id}">${topic.topic}</g:link> <g:if test="${topic.lightningTalk}"><img class="lightningTalk" src="${resource(dir: 'images', file: 'lightning_32.png')}" alt="Lightning Talk" title="Lightning Talk"></g:if></h2>
     </div>
     <div class="entry">${topic.topicAbstract}</div>
     <div class="meta">
