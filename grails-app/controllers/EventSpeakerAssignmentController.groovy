@@ -14,12 +14,14 @@ class EventSpeakerAssignmentController {
 
   def list = {
     params.max = Math.min(params.max ? params.max.toInteger() : 10, 100)
+    params.sort = "topic"
+    params.order = "asc"
     [eventSpeakerAssignmentInstanceList: EventSpeakerAssignment.list(params), eventSpeakerAssignmentInstanceTotal: EventSpeakerAssignment.count()]
   }
 
   def listForSpeaker = {
     User user = User.get(params.id)
-    [eventSpeakerAssignmentInstanceList: EventSpeakerAssignment.findAllByUser(user), user: user]
+    [eventSpeakerAssignmentInstanceList: EventSpeakerAssignment.findAllByUser(user, [sort:'topic', order:'asc']), user: user]
   }
 
   def show = {
@@ -75,7 +77,8 @@ class EventSpeakerAssignmentController {
           return
         }
       }
-      eventSpeakerAssignmentInstance.properties = params
+//      eventSpeakerAssignmentInstance.properties = params
+      bindData(eventSpeakerAssignmentInstance,params)
       if (!eventSpeakerAssignmentInstance.hasErrors() && eventSpeakerAssignmentInstance.save()) {
         flash.message = "EventSpeakerAssignment ${params.id} updated"
 
@@ -95,7 +98,8 @@ class EventSpeakerAssignmentController {
 
   def create = {
     def eventSpeakerAssignmentInstance = new EventSpeakerAssignment()
-    eventSpeakerAssignmentInstance.properties = params
+//    eventSpeakerAssignmentInstance.properties = params
+    bindData(eventSpeakerAssignmentInstance, params)
     return ['eventSpeakerAssignmentInstance': eventSpeakerAssignmentInstance]
   }
 
