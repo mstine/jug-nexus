@@ -28,7 +28,8 @@ class RegisterController {
 
 		if (session.id) {
 			def person = new User()
-			person.properties = params
+//			person.properties = params
+          bindData(person,params)
 			return [person: person]
 		}
 
@@ -136,7 +137,8 @@ class RegisterController {
 		}
 
 		def person = new User()
-		person.properties = params
+//		person.properties = params
+      bindData(person,params)
 
 		def config = authenticateService.securityConfig
 		def defaultRole = config.security.defaultRole
