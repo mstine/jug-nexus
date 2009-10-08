@@ -9,6 +9,8 @@ class EventController {
 
   def list = {
     params.max = Math.min(params.max ? params.max.toInteger() : 10, 100)
+    params.sort = "startTime"
+    params.order = "desc"
     [eventInstanceList: Event.list(params), eventInstanceTotal: Event.count()]
   }
 
@@ -65,7 +67,8 @@ class EventController {
           return
         }
       }
-      eventInstance.properties = params
+//      eventInstance.properties = params
+      bindData(eventInstance, params)
       if (!eventInstance.hasErrors() && eventInstance.save()) {
         flash.message = "Event ${params.id} updated"
 
@@ -85,7 +88,8 @@ class EventController {
 
   def create = {
     def eventInstance = new Event()
-    eventInstance.properties = params
+//    eventInstance.properties = params
+    bindData(eventInstance,params)
     return ['eventInstance': eventInstance]
   }
 
