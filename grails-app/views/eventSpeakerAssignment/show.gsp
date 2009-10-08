@@ -30,7 +30,7 @@
       <li><strong>Event:</strong> <g:link controller="event" action="show" id="${eventSpeakerAssignmentInstance?.event?.id}">${eventSpeakerAssignmentInstance?.event?.encodeAsHTML()}</g:link></li>
     </ul>
   </p>
-    <div class="topicAbstract"><g:xwikiRender>${fieldValue(bean: eventSpeakerAssignmentInstance, field: 'topicAbstract')}</g:xwikiRender></div>
+    <div class="topicAbstract"><g:xwikiRender>${eventSpeakerAssignmentInstance.topicAbstract}</g:xwikiRender></div>
 
   </div>
 
