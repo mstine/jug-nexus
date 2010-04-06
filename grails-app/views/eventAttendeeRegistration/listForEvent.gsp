@@ -46,6 +46,9 @@
                 </g:else>
               </div>
             </td>
+            <td style="font-size: 1.5em; vertical-align: middle">
+              <g:link action="delete" params="${[userId:eventAttendeeRegistrationInstance.user.id, eventId:eventAttendeeRegistrationInstance.event.id]}"><img style="border: 0" src="${resource(dir: 'images', file: 'cancel.png')}"/></g:link>
+            </td>
           </g:ifAllGranted>
 
         </tr>
