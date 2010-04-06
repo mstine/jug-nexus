@@ -31,7 +31,7 @@ Released   : 20081016
       <h2>Welcome, <g:link controller="register"><g:loggedInUserInfo field="firstName"/></g:link>!<br/><span class="smallLink"><g:link controller="logout">Logout</g:link></span></h2>
     </g:isLoggedIn>
     <g:isNotLoggedIn>
-      <h2>Welcome!<br/><span class="smallLink"><g:link controller="login">Login</g:link> / <g:link controller="register">Register</g:link></span></h2>
+      <h2>Welcome!<br/><span class="smallLink"><g:link controller="login">Login</g:link> / <g:link controller="register">Register</g:link><br/><g:link controller="register" action="requestPasswordEmail">Forgot Password?</g:link></span></h2>
     </g:isNotLoggedIn>
 
   </div>
@@ -83,7 +83,7 @@ Released   : 20081016
               <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons License</a>, which allows others to use, distribute, and modify the image, so that
               other JUG mascots can be based on Juggy.</p>
               <p>Juggy Elvis is a concept originally conceived by Matt Stine, leader and founder of the
-              Memphis/Mid-South Java User Group, and brought to life by <a href="http://www.irinamcguire.com/design/logos/juggy_elvis.html">Irina McGuire</a>, a graphic designer and
+              Memphis/Mid-South Java User Group, and brought to life by <a href="http://www.irinamcguire.com/design/logos/juggy_elvis.php">Irina McGuire</a>, a graphic designer and
               web developer also from Memphis.</p>
             </li>
             <g:ifAllGranted role="ROLE_ADMIN">
