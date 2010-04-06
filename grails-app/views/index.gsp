@@ -7,6 +7,9 @@
 </head>
 <body>
 <h1>A group for Java developers from Memphis, TN, and the surrounding Mid-South</h1>
+<g:if test="${flash.message}">
+  <div class="message">${flash.message}</div>
+</g:if>
 <p style="text-align: center"><img src="${resource(dir: 'images', file: 'memphis0skyline-large.jpg')}"/></p>
 <p>This site exists to support the Java User Group for the Memphis, TN and surrounding Mid-South (Western Tennessee, Eastern Arkansas, North Mississippi) area. Please <g:link controller="register">register</g:link> and enjoy the benefits of being a JUG member!</p>
 <h2>Upcoming events:</h2>
