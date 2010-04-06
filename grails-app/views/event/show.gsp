@@ -44,6 +44,7 @@
         <div class="eventAdminDetails">
           <ul>
             <li><strong>Max Attendees:</strong> ${fieldValue(bean: eventInstance, field: 'maxAttendees')}</li>
+            <li><strong>Attendees Registered:</strong> ${eventInstance?.registrations?.size()}</li>
             <li><strong>Registration Open:</strong> ${fieldValue(bean: eventInstance, field: 'registrationOpen')}</li>
             <li><strong>On Home Page:</strong> ${fieldValue(bean: eventInstance, field: 'onHomePage')}</li>
             <li><strong>Archived:</strong> ${fieldValue(bean: eventInstance, field: 'archived')}</li>
