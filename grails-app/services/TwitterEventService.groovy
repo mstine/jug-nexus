@@ -61,7 +61,7 @@ class TwitterEventService {
     def authParams = [username: grailsApplication.config.twitter.username,
             password: grailsApplication.config.twitter.password]
     log.debug tweet
-//    twitterService.setStatus(tweet, authParams)
+    twitterService.setStatus(tweet, authParams)
   }
 
   private def createFormattedDate(def date) {
