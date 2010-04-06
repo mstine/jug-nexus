@@ -32,6 +32,7 @@ class User {
   boolean moderated = false
   boolean speakerOnly = false
   String whyIWantToJoin
+  String lastPasswordResetToken
 
   /** plain password to create a MD5 password    */
   String pass = '[secret]'
@@ -49,6 +50,7 @@ class User {
     blogFeed(nullable: true, url: true)
     twitterNickname(nullable: true)
     whyIWantToJoin(blank: false, maxSize: 4000)
+    lastPasswordResetToken(nullable: true)
   }
 
   String toString() {
