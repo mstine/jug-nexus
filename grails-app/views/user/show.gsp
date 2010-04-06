@@ -16,6 +16,7 @@
 </g:if>
 <g:render template="/userProfile" model="${[person: person]}"/>
 <g:ifAllGranted role="ROLE_ADMIN">
+  Last Password Reset Token: ${person.lastPasswordResetToken}
   <div class="buttons">
     <g:form>
       <input type="hidden" name="id" value="${person.id}"/>
