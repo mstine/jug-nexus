@@ -3,6 +3,7 @@ import grails.util.Environment
 class BootStrap {
 
   def authenticateService
+  def emailConfirmationService
 
   def init = {servletContext ->
 
@@ -17,6 +18,20 @@ class BootStrap {
         bootstrapProduction()
         break
     }
+
+    emailConfirmationService.onConfirmation = {email, uid ->
+      log.info("User with id $uid has confirmed their email address $email")
+      // now do somethingÉ
+      // Then return a map which will redirect the user to this destination
+      return [controller: 'register', action: 'resetPassword', params: [uid: uid]]
+    }
+    emailConfirmationService.onInvalid = {uid ->
+      log.warn("User with id $uid attempted an invalid password reset")
+    }
+    emailConfirmationService.onTimeout = {email, uid ->
+      log.warn("User with id $uid failed to reset password after 30 days")
+    }
+
 
   }
 
