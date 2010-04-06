@@ -1,3 +1,8 @@
+import Event
+import EventAttendeeRegistration
+import User
+import org.springframework.dao.DataIntegrityViolationException
+
 class EventAttendeeRegistrationController {
 
   def index = { redirect(action: listForEvent, id: params.id) }
@@ -32,5 +37,16 @@ class EventAttendeeRegistrationController {
     event.removeFromRegistrations(registration)
     registration.delete()
     render registerForEvent(event: event)
+  }
+
+  def delete = {
+    def user = User.get(params.userId)
+    def event = Event.get(params.eventId)
+
+    def registration = EventAttendeeRegistration.findByEventAndUser(event, user)
+    user.removeFromEventsAttending(registration)
+    event.removeFromRegistrations(registration)
+    registration.delete()
+    redirect (action: listForEvent, id: params.eventId)
   }
 }
