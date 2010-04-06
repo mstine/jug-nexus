@@ -13,7 +13,6 @@ class EventSpeakerAssignmentController {
   static allowedMethods = [delete: 'POST', save: 'POST', update: 'POST']
 
   def list = {
-    params.max = Math.min(params.max ? params.max.toInteger() : 10, 100)
     params.sort = "topic"
     params.order = "asc"
     [eventSpeakerAssignmentInstanceList: EventSpeakerAssignment.list(params), eventSpeakerAssignmentInstanceTotal: EventSpeakerAssignment.count()]
