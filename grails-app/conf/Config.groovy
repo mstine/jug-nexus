@@ -9,6 +9,8 @@
 // if(System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+emailConfirmation.from = 'jugleader@memphisjug.org'
+
 twitter.username = 'memphisjug'
 twitter.password = '########'
 
@@ -42,11 +44,12 @@ grails.enable.native2ascii = true
 environments {
   production {
     grails.serverURL = "http://www.memphisjug.org"
+    gmap.apiKey = "ABQIAAAACh6QoGMH5jXrbrlXKcLtrxRCCl3Cu310wKizRJBzKoUV2z9GZhTe65FZcjAmXyZM9K4XUwQwVRKlGA"
 
     fileuploader {
 
       slides {
-        maxSize = 1000 * 1024 * 10 //10 MB
+        maxSize = 3000 * 1024 * 10 //30 MB
         allowedExtensions = ["pdf", "ppt", "pptx", "key"]
         path = "/home/webadmin/memphisjug.virtual.vps-host.net/uploaded/slides"
       }
@@ -61,6 +64,7 @@ environments {
   }
   development {
     grails.serverURL = "http://localhost:8080/${appName}"
+    gmap.apiKey = "ABQIAAAACh6QoGMH5jXrbrlXKcLtrxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQvaCSS6JrjL8_wrwpfs3Wtrb0q-w"
 
     fileuploader {
 
