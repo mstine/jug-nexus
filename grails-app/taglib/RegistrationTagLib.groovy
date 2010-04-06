@@ -31,16 +31,21 @@ class RegistrationTagLib {
       out << """<h2 class="eventClosed">Registration for this event has closed.</h2>"""
     }
 
+    out << """<script type="text/javascript">
+   function showSpinner() {
+      \$('registration').down().innerHTML = '<img src="${resource(dir: 'images', file: 'ajax-loader.gif')}"/>';
+   }
+</script>"""
   }
 
   private def outputRegisterLink(out, user, event) {
-    out << """<h2>${remoteLink(update: "registration", controller: "eventAttendeeRegistration", action: "registerAttendee", params: [userId: user.id, eventId: event.id]) {
+    out << """<h2>${remoteLink(update: "registration", controller: "eventAttendeeRegistration", action: "registerAttendee", params: [userId: user.id, eventId: event.id], onLoading: "showSpinner()") {
       """<img src="${resource(dir: 'images', file: 'ok.png')}"/> Register Me!"""
     }}</h2>"""
   }
 
   private def outputUnregisterLink(out, user, event) {
-    out << """<h2>${remoteLink(update: "registration", controller: "eventAttendeeRegistration", action: "unregisterAttendee", params: [userId: user.id, eventId: event.id]) {
+    out << """<h2>${remoteLink(update: "registration", controller: "eventAttendeeRegistration", action: "unregisterAttendee", params: [userId: user.id, eventId: event.id], onLoading: "showSpinner()") {
       """<img src="${resource(dir: 'images', file: 'cancel.png')}"/> Unregister Me!"""
     }}</h2>"""
     
